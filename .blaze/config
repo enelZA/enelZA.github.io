@@ -68,9 +68,9 @@ processor=Markdown.pl --html4tags %in% > %out%
 ##                 of the whole content of a blog post in the feed.
 ##
 [feed]
-baseurl=
+baseurl=http://enelza.github.io/
 posts=10
-fullposts=false
+fullposts=true
 
 ## Advanced post settings. Available options are:
 ##
