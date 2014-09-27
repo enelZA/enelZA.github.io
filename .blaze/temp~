@@ -1,0 +1,78 @@
+# This and the following lines beginning with '#' are the blog post header.
+# Please take your time and replace these options with desired values. Just
+# remember that the date has to be in the YYYY-MM-DD form, tags are a comma
+# separated list of categories the post (pages ignore these) belong to, and
+# the url,  if provided, should consist of alphanumeric characters, hyphens
+# and underscores only.  Specifying your own url  is especially recommended
+# in case you use non-ASCII characters in your blog post title.
+#
+#   title:    Blogging from the command line
+#   author:   EnelZA
+#   date:     2013-09-27
+#   keywords: Linux, blog, static, github, github.io
+#   tags:     Linux, Blog, Tutorial
+#   url:      
+#
+# The header ends here. The rest is the content of your blog post.
+
+This tutorial will demonstrate how to setup a static blog using [BlazeBlogger](http://blaze.blackened.cz) as the blog template engine.
+
+###Prerequisites and assumptions
+
+1. This tutorial make use of the apt-get package manager on Debian based Linux distros, please substitute with your favourite package installer.
+2. In order to keep things siple, I've used nano as the default text editor in this tutorial 
+
+### Install BlazeBlogger
+
+From your Linux command line, execute the following command
+
+	sudo apt-get install blazeblogger
+
+### Create and configure your blog
+
+Create a new folder that will contain your blog html files. For this example I will create a folder called *mynewblog* in my Home folder.
+
+	mkdir ~/mynewblog 
+
+Make sure you are in the newly created folder.
+
+	cd ~/mynewblog
+
+The next step is to initialize a new blog container by typing the following command in your blog folder.
+
+	blaze-init
+
+This will create a hidden folder called **.blaze**. This folder contains the configureation settings for your blog.
+Edit and change the configuration file. 
+
+	nano ~/mynewblog/.blaze/config
+
+Change the title, subtitle description and keywords settings to match your blog.
+
+![Config screenshot 1](img/b1.jpg)
+
+Now change the name and email address
+
+![Config screenshot 1](img/b1_1.jpg)
+
+
+Press the Control and o key and then Enter to save the config file. 
+Press Control and x to exit.
+
+### Create your first blog entry
+
+BlazeBlogger ships with a command called blaze-add, enter the command and create your first blog entry, press Control and x to save and exit the nano text editor.
+
+![Config screenshot 2](img/b1_2.jpg)
+
+
+The blaze-make command will create your website and add the blog entry. It will create your landing page called "index.html". 
+
+Here is the output of index.html.
+
+![Config screenshot 2](img/b1_3.jpg)
+
+
+
+
+

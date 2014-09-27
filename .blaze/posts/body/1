@@ -1,0 +1,61 @@
+<p>This tutorial will demonstrate how to setup a static blog using <a href="http://blaze.blackened.cz">BlazeBlogger</a> as the blog template engine.</p>
+
+<h3>Prerequisites and assumptions</h3>
+
+<ol>
+<li>This tutorial make use of the apt-get package manager on Debian based Linux distros, please substitute with your favourite package installer.</li>
+<li>In order to keep things simple, I've used nano as the default text editor in this tutorial </li>
+</ol>
+
+<h3>Install BlazeBlogger</h3>
+
+<p>From your Linux command line, execute the following command</p>
+
+<pre><code>sudo apt-get install blazeblogger
+</code></pre>
+
+<h3>Create and configure your blog</h3>
+
+<p>Create a new folder that will contain your blog html files. For this example I will create a folder called <em>mynewblog</em> in my Home folder.</p>
+
+<pre><code>mkdir ~/mynewblog
+</code></pre>
+
+<p>Make sure you are in the newly created folder.</p>
+
+<pre><code>cd ~/mynewblog
+</code></pre>
+
+<p>The next step is to initialize a new blog container by typing the following command in your blog folder.</p>
+
+<pre><code>blaze-init
+</code></pre>
+
+<p>This will create a hidden folder called <strong>.blaze</strong>. This folder contains the configuration settings for your blog.
+Edit and change the configuration file. </p>
+
+<pre><code>nano ~/mynewblog/.blaze/config
+</code></pre>
+
+<p>Change the title, subtitle description and keywords settings to match your blog.</p>
+
+<p><img src="img/b1.jpg" alt="Config screen shot 1" title=""></p>
+
+<p>Now change the name and email address</p>
+
+<p><img src="img/b1_1.jpg" alt="Config screen shot 1" title=""></p>
+
+<p>Press the Control and o key and then Enter to save the config file. 
+Press Control and x to exit.</p>
+
+<h3>Create your first blog entry</h3>
+
+<p>BlazeBlogger ships with a command called blaze-add, enter the command and create your first blog entry, press Control and x to save and exit the nano text editor.</p>
+
+<p><img src="img/b1_2.jpg" alt="Config screen shot 2" title=""></p>
+
+<p>The blaze-make command will create your website and add the blog entry. It will create your landing page called "index.html". </p>
+
+<p>Here is the output of index.html.</p>
+
+<p><img src="img/b1_3.jpg" alt="Config screen shot 2" title=""></p>
