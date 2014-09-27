@@ -57,7 +57,7 @@ log=false
 doctype=html
 extension=html
 encoding=UTF-8
-editor=
+editor=emacs
 processor=Markdown.pl --html4tags %in% > %out%
 
 ## RSS feed settings. Available options are:

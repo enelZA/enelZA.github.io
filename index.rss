@@ -6,6 +6,39 @@
   <description>Programming, Linux and life.</description>
   <generator>BlazeBlogger 1.2.0</generator>
   <item>
+    <title>Use ImageMagick to add a border to an image.</title>
+    <link>http://enelza.github.io/2013/10/2-use-imagemagick-to-add-a-border-to-an-image/</link>
+    <guid>http://enelza.github.io/2013/10/2-use-imagemagick-to-add-a-border-to-an-image/</guid>
+    <pubDate>Wed, 02 Oct 2013 00:00:01 GMT</pubDate>
+    <description><![CDATA[<p>Imagemagick is the Swiss army knive for command line image tools. </p>
+
+<p>Install the imagemagick suite via ap-get:</p>
+
+<pre><code>apt-get install imagemagick
+</code></pre>
+
+<p>Once installed, you can add a border to an image with the following command. (Command should be entered as a slingle line)</p>
+
+<pre><code>convert img.jpg -bordercolor white -border 13 
+\( +clone -background black -shadow 80x3+2+2 \) 
++swap -background white -layers merge +repage img.jpg
+</code></pre>
+
+<p>I have used the following image as the source image.</p>
+
+<p><img src="img/b2.jpg" alt="Sample input image" title=""></p>
+
+<p>and the output will look like this</p>
+
+<p><img src="img/b2_1.jpg" alt="Sample output image" title=""></p>
+
+<p>The sample <a href="http://commons.wikimedia.org/wiki/File:D%C3%BClmen,_Naturschutzgebiet_-Am_Enteborn-_--_2014_--_0202.jpg#mediaviewer/File:D%C3%BClmen,_Naturschutzgebiet_-Am_Enteborn-_--_2014_--_0202.jpg">
+Image</a> was obtained via <a href="http://commons.wikimedia.org/wiki/">Wikimedia Commons</a>
+and is the original work of © <a href="http://commons.wikimedia.org/wiki/User:XRay" title="User:XRay">Dietmar Rabich</a>, 
+<a rel="nofollow" class="external text" href="http://www.rabich.de/">rabich.de</a>,  licensed under <a title="Creative Commons Attribution-Share Alike 4.0" href="http://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>.</p>
+    ]]></description>
+  </item>
+  <item>
     <title>Blogging from the command line</title>
     <link>http://enelza.github.io/2013/09/1-blogging-from-the-command-line/</link>
     <guid>http://enelza.github.io/2013/09/1-blogging-from-the-command-line/</guid>
