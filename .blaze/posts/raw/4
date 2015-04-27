@@ -1,0 +1,15 @@
+
+Scheduled cron jobs can be hard to get right especially if the the cron job calls another script. 
+The scheduled script should no output anything to standard out and the script is triggered by a new instance of  /bin/sh
+
+In order to test your scheduled script in the same way as cron will run it, issue the following command.
+
+      /bin/sh -c "(
+      export PATH=/usr/bin:/bin;
+      /home/user/cron/scriptname.sh
+       </dev/null)"
+
+It simulates a cron execution of the scriptname.sh script.
+
+
+

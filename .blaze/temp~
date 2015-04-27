@@ -6,64 +6,12 @@
 # and underscores only.  Specifying your own url  is especially recommended
 # in case you use non-ASCII characters in your blog post title.
 #
-#   title:    Terminal "Google define:" functionality
+#   title:    
 #   author:   EnelZA
-#   date:     2014-10-27
-#   keywords: Linux
-#   tags:     Linux,Howto
+#   date:     2015-04-27
+#   keywords: 
+#   tags:     
 #   url:      
 #
 # The header ends here. The rest is the content of your blog post.
-
-Google have the nifty option to help you with word definitions and spelling.
-
-Type define:exagency into the Google search bar.
-
-![Google define functionality](img/b3_2.jpg)
-
-It will give the the meaning of the word. 
-
-If you misspelled, Google will suggest the correct spelling.
-
-![Google define functionality](img/b3_1.jpg)
-
-I use this functionality on a daily basis, because I always have a browser window open somewhere on my desktop. 
-
-Sometimes you are offline, visiting the [Kruger National Park](http://en.wikipedia.org/wiki/Kruger_National_Park) in South Africa, and your Google spell check habit will not suffice. The solution, [Gnu aspell](http://aspell.net/) and [aiksaurus](http://aiksaurus.sourceforge.net/) wrapped in a bash script.
-
-##The script:
-
-    define() {
-    ## check dependencies
-    hash aspell 2>/dev/null || { printf >&2 "This script require Aspell but, it's not installed.
-    \nUse 'Apt-get install aspell'\n"; return; }
-    hash aiksaurus 2>/dev/null || { printf >&2 "This script require aiksaurus, but it's not installed.
-    \nUse 'Apt-get install aiksaurus'\n"; return; }
-
-    check=$(echo "$1" | aspell -a | cut -d "*" -f2)
-    if [[ $check == *,* ]]
-    then
-	check=$(echo "$1" | aspell -a | cut -d "&" -f2)
-	check2=$(echo $check | cut -d ":" -f2)
-	arrIN=(${check2/,/ })
-    for i in "${arrIN[@]}"; do
-    	echo -e " \e[1;31m$i\e[0m"
-    done
-    else
-	echo -e " \e[1;33m$1\e[0m"
-	aiksaurus $1
-    fi
-    }
-
-##Usage
-
-Add the script to your ~/.bashrc file and use the define() function with the word you want to look up as the only parameter.
-
-![Function output](img/b3_3.jpg)
-
-
-
-
-
-
 
