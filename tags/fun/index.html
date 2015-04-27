@@ -7,10 +7,10 @@
   <meta name="Copyright" content="&copy; 2015 EnelZA">
   <meta name="Date" content="Mon Apr 27 12:10:44 2015">
   <meta name="Description" content="EnelZa is a blog about programming, bash, cool tools, efficiency on the command line.">
-  <meta name="Keywords" content="Posts tagged as cron, Bash Linux programming ">
+  <meta name="Keywords" content="Posts tagged as fun, Bash Linux programming ">
   <link rel="stylesheet" href="../../default.css" type="text/css">
   <link rel="alternate" href="../../index.rss" title="RSS Feed" type="application/rss+xml">
-  <title>Posts tagged as cron</title>
+  <title>Posts tagged as fun</title>
 </head>
 
 <body>
@@ -31,24 +31,41 @@
   </div>
 
   <div id="content">
-<div class="section">Posts tagged as cron</div>
+<div class="section">Posts tagged as fun</div>
 
-<h2 class="post"><a href="../../2014/01/4-test-cron-job-scripts" rel="permalink">Test Cron Job scripts</a></h2>
+<h2 class="post"><a href="../../2015/04/10-install-asciiquarium-on-ubuntu" rel="permalink">Install asciiquarium on ubuntu</a></h2>
 <div class="information">
-   <span class="date">2014-01-27</span> by <span class="author">EnelZA</span>, tagged as <span class="tags"><a href="../../tags/cron">cron</a>, <a href="../../tags/linux">linux</a></span>
+   <span class="date">2015-04-27</span> by <span class="author">EnelZA</span>, tagged as <span class="tags"><a href="../../tags/fun">fun</a>, <a href="../../tags/linux">linux</a></span>
 </div>
-<p>Scheduled cron jobs can be hard to get right especially if the the cron job calls another script. 
-The scheduled script should no output anything to standard out and the script is triggered by a new instance of  /bin/sh</p>
+<p>AsciiQuarium is a ncurses text based fish aquarium. </p>
 
-<p>In order to test your scheduled script in the same way as cron will run it, issue the following command.</p>
+<p><img src="img/b10_1.jpg" alt="Before photo" title=""></p>
 
-<pre><code>  /bin/sh -c "(
-  export PATH=/usr/bin:/bin;
-  /home/user/cron/scriptname.sh
-   &lt;/dev/null)"
-</code></pre>
+<h3>Setup libcurses and term-amimation in perl</h3>
 
-<p>It simulates a cron execution of the scriptname.sh script.</p>
+<p>apt-get install libcurses-perl</p>
+
+<p>wget http://search.cpan.org/CPAN/authors/id/K/KB/KBAUCOM/Term-Animation-2.4.tar.gz</p>
+
+<p>tar -zxvf Term-Animation-2.4.tar.gz</p>
+
+<p>cd Term-Animation-2.4/</p>
+
+<p>perl Makefile.PL &amp;&amp;  make &amp;&amp;   make test</p>
+
+<p>make install</p>
+
+<h3>Now install asciiquarium</h3>
+
+<p>wget http://www.robobunny.com/projects/asciiquarium/asciiquarium.tar.gz</p>
+
+<p>tar -zxvf asciiquarium.tar.gz</p>
+
+<p>cd asciiquarium_1.1/</p>
+
+<p>cp asciiquarium /usr/local/bin</p>
+
+<p>chmod 0755 /usr/local/bin/asciiquarium</p>
 
   </div>
 

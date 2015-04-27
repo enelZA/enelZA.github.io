@@ -1,0 +1,29 @@
+<p>AsciiQuarium is a ncurses text based fish aquarium. </p>
+
+<p><img src="img/b10_1.jpg" alt="Before photo" title=""></p>
+
+<h3>Setup libcurses and term-amimation in perl</h3>
+
+<p>apt-get install libcurses-perl</p>
+
+<p>wget http://search.cpan.org/CPAN/authors/id/K/KB/KBAUCOM/Term-Animation-2.4.tar.gz</p>
+
+<p>tar -zxvf Term-Animation-2.4.tar.gz</p>
+
+<p>cd Term-Animation-2.4/</p>
+
+<p>perl Makefile.PL &amp;&amp;  make &amp;&amp;   make test</p>
+
+<p>make install</p>
+
+<h3>Now install asciiquarium</h3>
+
+<p>wget http://www.robobunny.com/projects/asciiquarium/asciiquarium.tar.gz</p>
+
+<p>tar -zxvf asciiquarium.tar.gz</p>
+
+<p>cd asciiquarium_1.1/</p>
+
+<p>cp asciiquarium /usr/local/bin</p>
+
+<p>chmod 0755 /usr/local/bin/asciiquarium</p>

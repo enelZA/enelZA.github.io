@@ -6,10 +6,68 @@
   <description>Programming, Linux and life.</description>
   <generator>BlazeBlogger 1.2.0</generator>
   <item>
+    <title>Install asciiquarium on ubuntu</title>
+    <link>http://enelza.github.io/2015/04/10-install-asciiquarium-on-ubuntu/</link>
+    <guid>http://enelza.github.io/2015/04/10-install-asciiquarium-on-ubuntu/</guid>
+    <pubDate>Mon, 27 Apr 2015 00:00:01 GMT</pubDate>
+    <description><![CDATA[<p>AsciiQuarium is a ncurses text based fish aquarium. </p>
+
+<p><img src="img/b10_1.jpg" alt="Before photo" title=""></p>
+
+<h3>Setup libcurses and term-amimation in perl</h3>
+
+<p>apt-get install libcurses-perl</p>
+
+<p>wget http://search.cpan.org/CPAN/authors/id/K/KB/KBAUCOM/Term-Animation-2.4.tar.gz</p>
+
+<p>tar -zxvf Term-Animation-2.4.tar.gz</p>
+
+<p>cd Term-Animation-2.4/</p>
+
+<p>perl Makefile.PL &amp;&amp;  make &amp;&amp;   make test</p>
+
+<p>make install</p>
+
+<h3>Now install asciiquarium</h3>
+
+<p>wget http://www.robobunny.com/projects/asciiquarium/asciiquarium.tar.gz</p>
+
+<p>tar -zxvf asciiquarium.tar.gz</p>
+
+<p>cd asciiquarium_1.1/</p>
+
+<p>cp asciiquarium /usr/local/bin</p>
+
+<p>chmod 0755 /usr/local/bin/asciiquarium</p>
+    ]]></description>
+  </item>
+  <item>
+    <title>Clean out a white board photo</title>
+    <link>http://enelza.github.io/2014/05/9-clean-out-a-white-board-photo/</link>
+    <guid>http://enelza.github.io/2014/05/9-clean-out-a-white-board-photo/</guid>
+    <pubDate>Thu, 22 May 2014 00:00:01 GMT</pubDate>
+    <description><![CDATA[<p>Use the following imagemagick convert script</p>
+
+<pre><code>#!/bin/bash
+convert $1 -morphology Convolve DoG:15,100,0
+-negate -normalize -blur 0x1
+-channel RBG -level 60%,91%,0.1 $2
+</code></pre>
+
+<p>Before photo</p>
+
+<p><img src="img/b9_1.jpg" alt="Before photo" title=""></p>
+
+<p>After Photo</p>
+
+<p><img src="img/b9_2.jpg" alt="After Photo" title=""></p>
+    ]]></description>
+  </item>
+  <item>
     <title>All the different linux log files</title>
-    <link>http://enelza.github.io/2015/04/8-all-the-different-linux-log-files/</link>
-    <guid>http://enelza.github.io/2015/04/8-all-the-different-linux-log-files/</guid>
-    <pubDate>Wed, 22 Apr 2015 00:00:01 GMT</pubDate>
+    <link>http://enelza.github.io/2014/04/8-all-the-different-linux-log-files/</link>
+    <guid>http://enelza.github.io/2014/04/8-all-the-different-linux-log-files/</guid>
+    <pubDate>Tue, 22 Apr 2014 00:00:01 GMT</pubDate>
     <description><![CDATA[<ul>
 <li><strong>var/log/messages</strong> Contains global system messages, including the messages that are logged during system startup. There are several things that are logged in /var/log/messages including mail, cron, daemon, kern, auth, etc.</li>
 <li><strong>/var/log/dmesg</strong> Contains kernel ring buffer information. When the system boots up, it prints number of messages on the screen that displays information about the hardware devices that the kernel detects during boot process. These messages are available in kernel ring buffer and whenever the new message comes the old message gets overwritten. You can also view the content of this file using the dmesg command.</li>
@@ -44,28 +102,6 @@ Apart from the above log files, /var/log directory may also contain the followin
 <li><strong>/var/log/sa/</strong> Contains the daily sar files that are collected by the sysstat package.</li>
 <li><strong>/var/log/sssd/</strong> Use by system security services daemon that manage access to remote directories and authentication mechanisms.</li>
 </ul>
-    ]]></description>
-  </item>
-  <item>
-    <title>Clean out a white board photo</title>
-    <link>http://enelza.github.io/2014/05/9-clean-out-a-white-board-photo/</link>
-    <guid>http://enelza.github.io/2014/05/9-clean-out-a-white-board-photo/</guid>
-    <pubDate>Thu, 22 May 2014 00:00:01 GMT</pubDate>
-    <description><![CDATA[<p>Use the following imagemagick convert script</p>
-
-<pre><code>#!/bin/bash
-convert $1 -morphology Convolve DoG:15,100,0
--negate -normalize -blur 0x1
--channel RBG -level 60%,91%,0.1 $2
-</code></pre>
-
-<p>Before photo</p>
-
-<p><img src="img/b9_1.jpg" alt="Before photo" title=""></p>
-
-<p>After Photo</p>
-
-<p><img src="img/b9_2.jpg" alt="After Photo" title=""></p>
     ]]></description>
   </item>
   <item>

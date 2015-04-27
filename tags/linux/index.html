@@ -5,7 +5,7 @@
   <meta http-equiv="Content-Type" content="txt/html; charset=UTF-8">
   <meta name="Generator" content="BlazeBlogger 1.2.0">
   <meta name="Copyright" content="&copy; 2015 EnelZA">
-  <meta name="Date" content="Mon Apr 27 12:00:31 2015">
+  <meta name="Date" content="Mon Apr 27 12:10:44 2015">
   <meta name="Description" content="EnelZa is a blog about programming, bash, cool tools, efficiency on the command line.">
   <meta name="Keywords" content="Posts tagged as linux, Bash Linux programming ">
   <link rel="stylesheet" href="../../default.css" type="text/css">
@@ -33,9 +33,63 @@
   <div id="content">
 <div class="section">Posts tagged as linux</div>
 
-<h2 class="post"><a href="../../2015/04/8-all-the-different-linux-log-files" rel="permalink">All the different linux log files</a></h2>
+<h2 class="post"><a href="../../2015/04/10-install-asciiquarium-on-ubuntu" rel="permalink">Install asciiquarium on ubuntu</a></h2>
 <div class="information">
-   <span class="date">2015-04-22</span> by <span class="author">EnelZA</span>, tagged as <span class="tags"><a href="../../tags/linux">linux</a>, <a href="../../tags/logs">logs</a></span>
+   <span class="date">2015-04-27</span> by <span class="author">EnelZA</span>, tagged as <span class="tags"><a href="../../tags/fun">fun</a>, <a href="../../tags/linux">linux</a></span>
+</div>
+<p>AsciiQuarium is a ncurses text based fish aquarium. </p>
+
+<p><img src="img/b10_1.jpg" alt="Before photo" title=""></p>
+
+<h3>Setup libcurses and term-amimation in perl</h3>
+
+<p>apt-get install libcurses-perl</p>
+
+<p>wget http://search.cpan.org/CPAN/authors/id/K/KB/KBAUCOM/Term-Animation-2.4.tar.gz</p>
+
+<p>tar -zxvf Term-Animation-2.4.tar.gz</p>
+
+<p>cd Term-Animation-2.4/</p>
+
+<p>perl Makefile.PL &amp;&amp;  make &amp;&amp;   make test</p>
+
+<p>make install</p>
+
+<h3>Now install asciiquarium</h3>
+
+<p>wget http://www.robobunny.com/projects/asciiquarium/asciiquarium.tar.gz</p>
+
+<p>tar -zxvf asciiquarium.tar.gz</p>
+
+<p>cd asciiquarium_1.1/</p>
+
+<p>cp asciiquarium /usr/local/bin</p>
+
+<p>chmod 0755 /usr/local/bin/asciiquarium</p>
+
+<h2 class="post"><a href="../../2014/05/9-clean-out-a-white-board-photo" rel="permalink">Clean out a white board photo</a></h2>
+<div class="information">
+   <span class="date">2014-05-22</span> by <span class="author">EnelZA</span>, tagged as <span class="tags"><a href="../../tags/linux">linux</a></span>
+</div>
+<p>Use the following imagemagick convert script</p>
+
+<pre><code>#!/bin/bash
+convert $1 -morphology Convolve DoG:15,100,0
+-negate -normalize -blur 0x1
+-channel RBG -level 60%,91%,0.1 $2
+</code></pre>
+
+<p>Before photo</p>
+
+<p><img src="img/b9_1.jpg" alt="Before photo" title=""></p>
+
+<p>After Photo</p>
+
+<p><img src="img/b9_2.jpg" alt="After Photo" title=""></p>
+
+<h2 class="post"><a href="../../2014/04/8-all-the-different-linux-log-files" rel="permalink">All the different linux log files</a></h2>
+<div class="information">
+   <span class="date">2014-04-22</span> by <span class="author">EnelZA</span>, tagged as <span class="tags"><a href="../../tags/linux">linux</a>, <a href="../../tags/logs">logs</a></span>
 </div>
 <ul>
 <li><strong>var/log/messages</strong> Contains global system messages, including the messages that are logged during system startup. There are several things that are logged in /var/log/messages including mail, cron, daemon, kern, auth, etc.</li>
@@ -71,26 +125,6 @@ Apart from the above log files, /var/log directory may also contain the followin
 <li><strong>/var/log/sa/</strong> Contains the daily sar files that are collected by the sysstat package.</li>
 <li><strong>/var/log/sssd/</strong> Use by system security services daemon that manage access to remote directories and authentication mechanisms.</li>
 </ul>
-
-<h2 class="post"><a href="../../2014/05/9-clean-out-a-white-board-photo" rel="permalink">Clean out a white board photo</a></h2>
-<div class="information">
-   <span class="date">2014-05-22</span> by <span class="author">EnelZA</span>, tagged as <span class="tags"><a href="../../tags/linux">linux</a></span>
-</div>
-<p>Use the following imagemagick convert script</p>
-
-<pre><code>#!/bin/bash
-convert $1 -morphology Convolve DoG:15,100,0
--negate -normalize -blur 0x1
--channel RBG -level 60%,91%,0.1 $2
-</code></pre>
-
-<p>Before photo</p>
-
-<p><img src="img/b9_1.jpg" alt="Before photo" title=""></p>
-
-<p>After Photo</p>
-
-<p><img src="img/b9_2.jpg" alt="After Photo" title=""></p>
 
 <h2 class="post"><a href="../../2014/03/7-create-a-pdf-calendar-for-printing" rel="permalink">Create a PDF calendar for printing</a></h2>
 <div class="information">
@@ -283,8 +317,9 @@ Press Control and x to exit.</p>
     <ul>
 <li><a href="../../tags/blog">blog (1)</a></li>
 <li><a href="../../tags/cron">cron (1)</a></li>
+<li><a href="../../tags/fun">fun (1)</a></li>
 <li><a href="../../tags/howto">howto (1)</a></li>
-<li><a href="../../tags/linux">linux (8)</a></li>
+<li><a href="../../tags/linux">linux (9)</a></li>
 <li><a href="../../tags/logs">logs (1)</a></li>
 <li><a href="../../tags/pdf">pdf (1)</a></li>
 <li><a href="../../tags/tutorial">tutorial (2)</a></li>
@@ -294,6 +329,7 @@ Press Control and x to exit.</p>
     <ul>
 <li><a href="../../2015/04">April 2015 (1)</a></li>
 <li><a href="../../2014/05">May 2014 (1)</a></li>
+<li><a href="../../2014/04">April 2014 (1)</a></li>
 <li><a href="../../2014/03">March 2014 (1)</a></li>
 <li><a href="../../2014/02">February 2014 (2)</a></li>
 <li><a href="../../2014/01">January 2014 (1)</a></li>
