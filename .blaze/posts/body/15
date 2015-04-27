@@ -1,0 +1,68 @@
+<p>Consume the the Yahoo weather xml api from a Bash Script.</p>
+
+<p>Create a bash function called jhb_weather()</p>
+
+<p>The script will:</p>
+
+<ul>
+<li>Download the weather xml file</li>
+<li>Parse the xml using xstl defined in the xslt.xsl file</li>
+<li>Print out html</li>
+<li>use the links text browser to dispaly the html on the command line.</li>
+</ul>
+
+<h2>Bash Script</h2>
+
+<pre><code>jhb_weather()
+{
+    curl --silent "http://xml.weather.yahoo.com/forecastrss?p=SFXX0044&amp;u=c" | xsl
+    tproc ~/scratch/w/xslt.xsl - &gt; ~/scratch/w/html.html
+    links -dump ~/scratch/w/html.html
+}
+</code></pre>
+
+<h2>XSLT file</h2>
+
+<p><?xml version="1.0"?>
+   <xsl:stylesheet
+   xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+   xmlns:yweather="http://xml.weather.yahoo.com/ns/rss/1.0" version="1.0"></p>
+
+<p><xsl:output indent="yes" method="xml" encoding="UTF-8" omit-xml-declaration="yes" />
+   <xsl:template match="/">
+   <html>
+        <table border="1">
+        <tr>
+        <td>Temp</td>
+        <td><xsl:value-of select="//yweather:condition/@temp" /> </td>
+        </tr>
+        <tr>
+        <td>Condition</td>
+        <td><xsl:value-of select="//item/yweather:condition/@text" /></td>
+        </tr>
+        <tr>
+        <td>Wind Speed</td>
+        <td><xsl:value-of select="//yweather:wind/@speed" /></td>
+        </tr>
+        <tr>
+        <td>Sunrise</td>
+        <td><xsl:value-of select="//yweather:astronomy/@sunrise" /></td>
+        </tr>
+        <tr>
+        <td>Sunset</td>
+        <td><xsl:value-of select="//yweather:astronomy/@sunset" /></td>
+        </tr>
+        <tr><td>Tomorrow High</td>
+         <td><xsl:value-of select="//item/yweather:forecast[1]/@high" /></td>
+        </tr>
+        <tr><td>Tomorrow Low</td>
+        <td><xsl:value-of select="//item/yweather:forecast[1]/@low" /></td>
+        </tr>
+        </table>
+   </html>
+   </xsl:template>
+   </xsl:stylesheet></p>
+
+<h2>Output</h2>
+
+<p><img src="img/b14.jpg" alt="Yahoo Weather" title=""></p>

@@ -5,7 +5,7 @@
   <meta http-equiv="Content-Type" content="txt/html; charset=UTF-8">
   <meta name="Generator" content="BlazeBlogger 1.2.0">
   <meta name="Copyright" content="&copy; 2015 EnelZA">
-  <meta name="Date" content="Mon Apr 27 12:57:37 2015">
+  <meta name="Date" content="Mon Apr 27 13:13:54 2015">
   <meta name="Description" content="EnelZa is a blog about programming, bash, cool tools, efficiency on the command line.">
   <meta name="Keywords" content="Bash Linux programming ">
   <link rel="stylesheet" href="default.css" type="text/css">
@@ -31,6 +31,79 @@
   </div>
 
   <div id="content">
+
+<h2 class="post"><a href="2015/01/15-yahoo-weather-api-via-command-line" rel="permalink">Yahoo weather api via command line</a></h2>
+<div class="information">
+   <span class="date">2015-01-11</span> by <span class="author">EnelZA</span>, tagged as <span class="tags"><a href="tags/hoto">hoto</a>, <a href="tags/linux">linux</a></span>
+</div>
+<p>Consume the the Yahoo weather xml api from a Bash Script.</p>
+
+<p>Create a bash function called jhb_weather()</p>
+
+<p>The script will:</p>
+
+<ul>
+<li>Download the weather xml file</li>
+<li>Parse the xml using xstl defined in the xslt.xsl file</li>
+<li>Print out html</li>
+<li>use the links text browser to dispaly the html on the command line.</li>
+</ul>
+
+<h2>Bash Script</h2>
+
+<pre><code>jhb_weather()
+{
+    curl --silent "http://xml.weather.yahoo.com/forecastrss?p=SFXX0044&amp;u=c" | xsl
+    tproc ~/scratch/w/xslt.xsl - &gt; ~/scratch/w/html.html
+    links -dump ~/scratch/w/html.html
+}
+</code></pre>
+
+<h2>XSLT file</h2>
+
+<p><?xml version="1.0"?>
+   <xsl:stylesheet
+   xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+   xmlns:yweather="http://xml.weather.yahoo.com/ns/rss/1.0" version="1.0"></p>
+
+<p><xsl:output indent="yes" method="xml" encoding="UTF-8" omit-xml-declaration="yes" />
+   <xsl:template match="/">
+   <html>
+        <table border="1">
+        <tr>
+        <td>Temp</td>
+        <td><xsl:value-of select="//yweather:condition/@temp" /> </td>
+        </tr>
+        <tr>
+        <td>Condition</td>
+        <td><xsl:value-of select="//item/yweather:condition/@text" /></td>
+        </tr>
+        <tr>
+        <td>Wind Speed</td>
+        <td><xsl:value-of select="//yweather:wind/@speed" /></td>
+        </tr>
+        <tr>
+        <td>Sunrise</td>
+        <td><xsl:value-of select="//yweather:astronomy/@sunrise" /></td>
+        </tr>
+        <tr>
+        <td>Sunset</td>
+        <td><xsl:value-of select="//yweather:astronomy/@sunset" /></td>
+        </tr>
+        <tr><td>Tomorrow High</td>
+         <td><xsl:value-of select="//item/yweather:forecast[1]/@high" /></td>
+        </tr>
+        <tr><td>Tomorrow Low</td>
+        <td><xsl:value-of select="//item/yweather:forecast[1]/@low" /></td>
+        </tr>
+        </table>
+   </html>
+   </xsl:template>
+   </xsl:stylesheet></p>
+
+<h2>Output</h2>
+
+<p><img src="img/b14.jpg" alt="Yahoo Weather" title=""></p>
 
 <h2 class="post"><a href="2014/11/14-reading-atlas-shrugged-for-the-tenth-time" rel="permalink">Reading Atlas Shrugged for the tenth time.</a></h2>
 <div class="information">
@@ -422,9 +495,10 @@ Press Control and x to exit.</p>
 <li><a href="tags/book">book (1)</a></li>
 <li><a href="tags/cron">cron (1)</a></li>
 <li><a href="tags/fun">fun (1)</a></li>
+<li><a href="tags/hoto">hoto (1)</a></li>
 <li><a href="tags/howto">howto (3)</a></li>
 <li><a href="tags/java">java (1)</a></li>
-<li><a href="tags/linux">linux (10)</a></li>
+<li><a href="tags/linux">linux (11)</a></li>
 <li><a href="tags/logs">logs (1)</a></li>
 <li><a href="tags/me">me (2)</a></li>
 <li><a href="tags/pdf">pdf (1)</a></li>
@@ -433,6 +507,7 @@ Press Control and x to exit.</p>
 
     <h2>Archive</h2>
     <ul>
+<li><a href="2015/01">January 2015 (1)</a></li>
 <li><a href="2014/11">November 2014 (1)</a></li>
 <li><a href="2014/08">August 2014 (1)</a></li>
 <li><a href="2014/07">July 2014 (1)</a></li>

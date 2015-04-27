@@ -1,0 +1,67 @@
+
+
+Consume the the Yahoo weather xml api from a Bash Script.
+
+Create a bash function called jhb_weather()
+
+The script will:
+
+* Download the weather xml file
+* Parse the xml using xstl defined in the xslt.xsl file
+* Print out html
+* use the links text browser to dispaly the html on the command line.
+
+## Bash Script
+
+	jhb_weather()
+	{
+	    curl --silent "http://xml.weather.yahoo.com/forecastrss?p=SFXX0044&u=c" | xsl
+	    tproc ~/scratch/w/xslt.xsl - > ~/scratch/w/html.html
+	    links -dump ~/scratch/w/html.html
+	}
+
+## XSLT file
+
+   <?xml version="1.0"?>
+   <xsl:stylesheet
+   xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+   xmlns:yweather="http://xml.weather.yahoo.com/ns/rss/1.0" version="1.0">
+
+   <xsl:output indent="yes" method="xml" encoding="UTF-8" omit-xml-declaration="yes" />
+   <xsl:template match="/">
+   <html>
+        <table border="1">
+        <tr>
+        <td>Temp</td>
+        <td><xsl:value-of select="//yweather:condition/@temp" /> </td>
+        </tr>
+        <tr>
+        <td>Condition</td>
+        <td><xsl:value-of select="//item/yweather:condition/@text" /></td>
+        </tr>
+        <tr>
+        <td>Wind Speed</td>
+        <td><xsl:value-of select="//yweather:wind/@speed" /></td>
+        </tr>
+        <tr>
+        <td>Sunrise</td>
+        <td><xsl:value-of select="//yweather:astronomy/@sunrise" /></td>
+        </tr>
+        <tr>
+        <td>Sunset</td>
+        <td><xsl:value-of select="//yweather:astronomy/@sunset" /></td>
+        </tr>
+        <tr><td>Tomorrow High</td>
+         <td><xsl:value-of select="//item/yweather:forecast[1]/@high" /></td>
+        </tr>
+        <tr><td>Tomorrow Low</td>
+        <td><xsl:value-of select="//item/yweather:forecast[1]/@low" /></td>
+        </tr>
+        </table>
+   </html>
+   </xsl:template>
+   </xsl:stylesheet>
+
+## Output
+
+![Yahoo Weather](img/b14.jpg)
