@@ -8,8 +8,8 @@ convert $1 -morphology Convolve DoG:15,100,0
 
 <p>Before photo</p>
 
-<p><img src="img/b9_1.jpg" alt="Before photo" title=""></p>
+<p><img src="http://enelza.github.io/img/b9_1.jpg" alt="Before photo" title=""></p>
 
 <p>After Photo</p>
 
-<p><img src="img/b9_2.jpg" alt="After Photo" title=""></p>
+<p><img src="http://enelza.github.io/img/b9_2.jpg" alt="After Photo" title=""></p>

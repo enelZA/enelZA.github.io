@@ -22,6 +22,6 @@ Use the plantuml.jar file to generate the swimlane activity diagram.
 
     java -jar plantuml.jar file.txt
 
-![Swimlane](img/b11.jpg)
+![Swimlane](http://enelza.github.io/img/b11.jpg)
 
 

@@ -38,7 +38,7 @@
     <pubDate>Fri, 14 Nov 2014 00:00:01 GMT</pubDate>
     <description><![CDATA[<p>The most influential book of all time.</p>
 
-<p><img src="img/b13.jpg" alt="Atlas Shrugged" title=""></p>
+<p><img src="http://enelza.github.io/img/b13.jpg" alt="Atlas Shrugged" title=""></p>
     ]]></description>
   </item>
   <item>
@@ -73,11 +73,11 @@
 
 <h1>Pelikan M150 Fountain Pen</h1>
 
-<p><img src="img/b12_1.jpg" alt="Pelikan" title=""></p>
+<p><img src="http://enelza.github.io/img/b12_1.jpg" alt="Pelikan" title=""></p>
 
 <h1>Rotring 600 Draftsman Pencil</h1>
 
-<p><img src="img/b12_2.jpg" alt="Pelikan" title=""></p>
+<p><img src="http://enelza.github.io/img/b12_2.jpg" alt="Pelikan" title=""></p>
     ]]></description>
   </item>
   <item>
@@ -109,7 +109,7 @@ stop
 <pre><code>java -jar plantuml.jar file.txt
 </code></pre>
 
-<p><img src="img/b11.jpg" alt="Swimlane" title=""></p>
+<p><img src="http://enelza.github.io/img/b11.jpg" alt="Swimlane" title=""></p>
     ]]></description>
   </item>
   <item>
@@ -127,11 +127,11 @@ convert $1 -morphology Convolve DoG:15,100,0
 
 <p>Before photo</p>
 
-<p><img src="img/b9_1.jpg" alt="Before photo" title=""></p>
+<p><img src="http://enelza.github.io/img/b9_1.jpg" alt="Before photo" title=""></p>
 
 <p>After Photo</p>
 
-<p><img src="img/b9_2.jpg" alt="After Photo" title=""></p>
+<p><img src="http://enelza.github.io/img/b9_2.jpg" alt="After Photo" title=""></p>
     ]]></description>
   </item>
   <item>
@@ -141,7 +141,7 @@ convert $1 -morphology Convolve DoG:15,100,0
     <pubDate>Mon, 05 May 2014 00:00:01 GMT</pubDate>
     <description><![CDATA[<p>AsciiQuarium is a ncurses text based fish aquarium. </p>
 
-<p><img src="img/b10_1.jpg" alt="Before photo" title=""></p>
+<p><img src="http://enelza.github.io/img/b10_1.jpg" alt="Before photo" title=""></p>
 
 <h3>Setup libcurses and term-amimation in perl</h3>
 

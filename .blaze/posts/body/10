@@ -1,6 +1,6 @@
 <p>AsciiQuarium is a ncurses text based fish aquarium. </p>
 
-<p><img src="img/b10_1.jpg" alt="Before photo" title=""></p>
+<p><img src="http://enelza.github.io/img/b10_1.jpg" alt="Before photo" title=""></p>
 
 <h3>Setup libcurses and term-amimation in perl</h3>
 

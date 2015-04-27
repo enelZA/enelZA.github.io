@@ -2,13 +2,13 @@
 
 <p>Type define:exagency into the Google search bar.</p>
 
-<p><img src="img/b3_2.jpg" alt="Google define functionality" title=""></p>
+<p><img src="http://enelza.github.io/img/b3_2.jpg" alt="Google define functionality" title=""></p>
 
 <p>It will give the the meaning of the word. </p>
 
 <p>If you misspelled, Google will suggest the correct spelling.</p>
 
-<p><img src="img/b3_1.jpg" alt="Google define functionality" title=""></p>
+<p><img src="http://enelza.github.io/img/b3_1.jpg" alt="Google define functionality" title=""></p>
 
 <p>I use this functionality on a daily basis, because I always have a browser window open somewhere on my desktop. </p>
 
@@ -43,4 +43,4 @@ fi
 
 <p>Add the script to your ~/.bashrc file and use the define() function with the word you want to look up as the only parameter.</p>
 
-<p><img src="img/b3_3.jpg" alt="Function output" title=""></p>
+<p><img src="http://enelza.github.io/img/b3_3.jpg" alt="Function output" title=""></p>

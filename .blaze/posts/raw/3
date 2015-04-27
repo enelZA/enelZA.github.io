@@ -3,13 +3,13 @@ Google have the nifty option to help you with word definitions and spelling.
 
 Type define:exagency into the Google search bar.
 
-![Google define functionality](img/b3_2.jpg)
+![Google define functionality](http://enelza.github.io/img/b3_2.jpg)
 
 It will give the the meaning of the word. 
 
 If you misspelled, Google will suggest the correct spelling.
 
-![Google define functionality](img/b3_1.jpg)
+![Google define functionality](http://enelza.github.io/img/b3_1.jpg)
 
 I use this functionality on a daily basis, because I always have a browser window open somewhere on my desktop. 
 
@@ -43,7 +43,7 @@ Sometimes you are offline, visiting the [Kruger National Park](http://en.wikiped
 
 Add the script to your ~/.bashrc file and use the define() function with the word you want to look up as the only parameter.
 
-![Function output](img/b3_3.jpg)
+![Function output](http://enelza.github.io/img/b3_3.jpg)
 
 
 

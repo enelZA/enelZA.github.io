@@ -33,11 +33,11 @@ Edit and change the configuration file.
 
 Change the title, subtitle description and keywords settings to match your blog.
 
-![Config screen shot 1](img/b1.jpg)
+![Config screen shot 1](http://enelza.github.io/img/b1.jpg)
 
 Now change the name and email address
 
-![Config screen shot 1](img/b1_1.jpg)
+![Config screen shot 1](http://enelza.github.io/img/b1_1.jpg)
 
 
 Press the Control and o key and then Enter to save the config file. 
@@ -47,14 +47,14 @@ Press Control and x to exit.
 
 BlazeBlogger ships with a command called blaze-add, enter the command and create your first blog entry, press Control and x to save and exit the nano text editor.
 
-![Config screen shot 2](img/b1_2.jpg)
+![Config screen shot 2](http://enelza.github.io/img/b1_2.jpg)
 
 
 The blaze-make command will create your website and add the blog entry. It will create your landing page called "index.html". 
 
 Here is the output of index.html.
 
-![Config screen shot 2](img/b1_3.jpg)
+![Config screen shot 2](http://enelza.github.io/img/b1_3.jpg)
 
 
 

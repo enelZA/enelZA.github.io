@@ -13,11 +13,11 @@ Once installed, you can add a border to an image with the following command. (Co
 
 I have used the following image as the source image.
 
-![Sample input image](img/b2.jpg)
+![Sample input image](http://enelza.github.io/img/b2.jpg)
 
 and the output will look like this
 
-![Sample output image](img/b2_1.jpg)
+![Sample output image](http://enelza.github.io/img/b2_1.jpg)
 
 
 The sample <a href="http://commons.wikimedia.org/wiki/File:D%C3%BClmen,_Naturschutzgebiet_-Am_Enteborn-_--_2014_--_0202.jpg#mediaviewer/File:D%C3%BClmen,_Naturschutzgebiet_-Am_Enteborn-_--_2014_--_0202.jpg">
