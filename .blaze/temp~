@@ -6,12 +6,24 @@
 # and underscores only.  Specifying your own url  is especially recommended
 # in case you use non-ASCII characters in your blog post title.
 #
-#   title:    
+#   title:    Clean out a white board photo
 #   author:   EnelZA
-#   date:     2015-04-27
-#   keywords: 
-#   tags:     
+#   date:     2014-05-22
+#   keywords: Linux
+#   tags:     Linux
 #   url:      
 #
 # The header ends here. The rest is the content of your blog post.
 
+Use the following imagemagick convert script
+
+    #!/bin/bash
+    convert $1 -morphology Convolve DoG:15,100,0
+    -negate -normalize -blur 0x1
+    -channel RBG -level 60%,91%,0.1 $2
+
+
+![Before photo](img/b1_2.jpg)
+
+
+![After Photo](img/b1_2.jpg)

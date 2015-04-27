@@ -7,10 +7,10 @@
   <meta name="Copyright" content="&copy; 2015 EnelZA">
   <meta name="Date" content="Mon Apr 27 12:00:31 2015">
   <meta name="Description" content="EnelZa is a blog about programming, bash, cool tools, efficiency on the command line.">
-  <meta name="Keywords" content="Linux, Bash Linux programming ">
+  <meta name="Keywords" content="Linux, PDF, Bash Linux programming ">
   <link rel="stylesheet" href="../../../default.css" type="text/css">
   <link rel="alternate" href="../../../index.rss" title="RSS Feed" type="application/rss+xml">
-  <title>Terminal "Google define:" functionality</title>
+  <title>Create a PDF calendar for printing</title>
 </head>
 
 <body>
@@ -32,56 +32,23 @@
 
   <div id="content">
 
-<h2 class="post">Terminal "Google define:" functionality</h2>
+<h2 class="post">Create a PDF calendar for printing</h2>
 <div class="information">
-   <span class="date">2013-10-27</span> by <span class="author">EnelZA</span>, tagged as <span class="tags"><a href="../../../tags/howto">howto</a>, <a href="../../../tags/linux">linux</a></span>
+   <span class="date">2014-03-03</span> by <span class="author">EnelZA</span>, tagged as <span class="tags"><a href="../../../tags/linux">linux</a>, <a href="../../../tags/pdf">pdf</a></span>
 </div>
-<p>Google have the nifty option to help you with word definitions and spelling.</p>
+<p>Install via apt-get</p>
 
-<p>Type define:exagency into the Google search bar.</p>
-
-<p><img src="img/b3_2.jpg" alt="Google define functionality" title=""></p>
-
-<p>It will give the the meaning of the word. </p>
-
-<p>If you misspelled, Google will suggest the correct spelling.</p>
-
-<p><img src="img/b3_1.jpg" alt="Google define functionality" title=""></p>
-
-<p>I use this functionality on a daily basis, because I always have a browser window open somewhere on my desktop. </p>
-
-<p>Sometimes you are offline, visiting the <a href="http://en.wikipedia.org/wiki/Kruger_National_Park">Kruger National Park</a> in South Africa, and your Google spell check habit will not suffice. The solution, <a href="http://aspell.net/">Gnu aspell</a> and <a href="http://aiksaurus.sourceforge.net/">aiksaurus</a> wrapped in a bash script.</p>
-
-<h2>The script:</h2>
-
-<pre><code>define() {
-## check dependencies
-hash aspell 2&gt;/dev/null || { printf &gt;&amp;2 "This script require Aspell but, it's not installed.
-\nUse 'Apt-get install aspell'\n"; return; }
-hash aiksaurus 2&gt;/dev/null || { printf &gt;&amp;2 "This script require aiksaurus, but it's not installed.
-\nUse 'Apt-get install aiksaurus'\n"; return; }
-
-check=$(echo "$1" | aspell -a | cut -d "*" -f2)
-if [[ $check == *,* ]]
-then
-check=$(echo "$1" | aspell -a | cut -d "&amp;" -f2)
-check2=$(echo $check | cut -d ":" -f2)
-arrIN=(${check2/,/ })
-for i in "${arrIN[@]}"; do
-    echo -e " \e[1;31m$i\e[0m"
-done
-else
-echo -e " \e[1;33m$1\e[0m"
-aiksaurus $1
-fi
-}
+<pre><code>apt-get install pcal
 </code></pre>
 
-<h2>Usage</h2>
+<p>Use pcal to print a range of monthly calendars</p>
 
-<p>Add the script to your ~/.bashrc file and use the define() function with the word you want to look up as the only parameter.</p>
+<pre><code>pcal -o April.ps 4 2015 3
+</code></pre>
 
-<p><img src="img/b3_3.jpg" alt="Function output" title=""></p>
+<p>Will print from month 4, three months into the future.</p>
+
+<p>April, May and June</p>
 
   </div>
 

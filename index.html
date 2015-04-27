@@ -5,7 +5,7 @@
   <meta http-equiv="Content-Type" content="txt/html; charset=UTF-8">
   <meta name="Generator" content="BlazeBlogger 1.2.0">
   <meta name="Copyright" content="&copy; 2015 EnelZA">
-  <meta name="Date" content="Mon Apr 27 11:22:20 2015">
+  <meta name="Date" content="Mon Apr 27 12:00:31 2015">
   <meta name="Description" content="EnelZa is a blog about programming, bash, cool tools, efficiency on the command line.">
   <meta name="Keywords" content="Bash Linux programming ">
   <link rel="stylesheet" href="default.css" type="text/css">
@@ -31,6 +31,115 @@
   </div>
 
   <div id="content">
+
+<h2 class="post"><a href="2015/04/8-all-the-different-linux-log-files" rel="permalink">All the different linux log files</a></h2>
+<div class="information">
+   <span class="date">2015-04-22</span> by <span class="author">EnelZA</span>, tagged as <span class="tags"><a href="tags/linux">linux</a>, <a href="tags/logs">logs</a></span>
+</div>
+<ul>
+<li><strong>var/log/messages</strong> Contains global system messages, including the messages that are logged during system startup. There are several things that are logged in /var/log/messages including mail, cron, daemon, kern, auth, etc.</li>
+<li><strong>/var/log/dmesg</strong> Contains kernel ring buffer information. When the system boots up, it prints number of messages on the screen that displays information about the hardware devices that the kernel detects during boot process. These messages are available in kernel ring buffer and whenever the new message comes the old message gets overwritten. You can also view the content of this file using the dmesg command.</li>
+<li><strong>/var/log/auth.log</strong>  Contains system authorization information, including user logins and authentication machinsm that were used.</li>
+<li><strong>/var/log/boot.log</strong>  Contains information that are logged when the system boots</li>
+<li><strong>/var/log/daemon.log</strong> ontains information logged by the various background daemons that runs on the system</li>
+<li><strong>/var/log/dpkg.log</strong> ontains information that are logged when a package is installed or removed using dpkg command</li>
+<li><strong>/var/log/kern.log</strong>Contains information logged by the kernel. Helpful for you to troubleshoot a custom-built kernel.</li>
+<li><strong>/var/log/lastlog</strong> Displays the recent login information for all the users. This is not an ascii file. You should use lastlog command to view the content of this file.</li>
+<li><strong>/var/log/maillog/var/log/mail.log</strong>  Contains the log information from the mail server that is running on the system. For example, sendmail logs information about all the sent items to this file</li>
+<li><strong>/var/log/user.log</strong>  Contains information about all user level logs</li>
+<li><strong>/var/log/Xorg.x.log</strong>  Log messages from the X</li>
+<li><strong>/var/log/alternatives.log</strong>  Information by the update-alternatives are logged into this log file. On Ubuntu, update-alternatives maintains symbolic links determining def ault commands.</li>
+<li><strong>/var/log/btmp</strong> (lastb command; shows all bad login attempts) /var/log/wtmp (displays all users logged in and out since the file is created...last command;login attempts)– This file contains information about failed login attemps. Use the last command to view the btmp file. For example, “last -f /var/log/btmp | more”</li>
+<li><strong>/var/log/cups</strong> All printer and printing related log messages</li>
+<li><strong>/var/log/anaconda.log</strong>  When you install Linux, all installation related messages are stored in this log file</li>
+<li><strong>/var/log/yum.log</strong>  Contains information that are logged when a package is installed using yum</li>
+<li><strong>/var/log/cron</strong> Whenever cron daemon(or anacron) starts a cron job, it logs the information about the cron job in this file</li>
+<li><strong>/var/log/secure</strong> Contains information related to authentication and authorization privileges. For example, sshd logs all the messages here, including unsuccessful login.</li>
+<li><strong>/var/log/wtmp or /var/log/utmp</strong> Contains login records. Using wtmp you can find out who is logged into the system. who command uses this file to display the information.</li>
+<li><strong>/var/log/faillog</strong> Contains user failed login attemps. Use faillog command to display the content of this file.
+Apart from the above log files, /var/log directory may also contain the following sub-directories depending on the application that is running on your system.</li>
+<li><strong>/var/log/httpd/ (or) /var/log/apache2</strong> Contains the apache web server access<em>log and error</em>log</li>
+<li><strong>/var/log/lighttpd/</strong> Contains light HTTPD access<em>log and error</em>log</li>
+<li><strong>/var/log/conman/</strong> Log files for ConMan client. conman connects remote consoles that are managed by conmand daemon.</li>
+<li><strong>/var/log/mail/</strong> This subdirectory contains additional logs from your mail server. For example, sendmail stores the collected mail statistics in /var/log/mail/statistics file</li>
+<li><strong>/var/log/prelink/</strong> prelink program modifies shared libraries and linked binaries to speed up the startup process.</li>
+<li><strong>/var/log/prelink/prelink.log</strong> contains the information about the .so file that was modified by the prelink.</li>
+<li><strong>/var/log/audit/</strong> Contains logs information stored by the Linux audit daemon (auditd).</li>
+<li><strong>/var/log/setroubleshoot/</strong> SELinux uses setroubleshootd (SE Trouble Shoot Daemon) to notify about issues in the security context of files, and logs those information in this log file.</li>
+<li><strong>/var/log/samba/</strong> Contains log information stored by samba, which is used to connect Windows to Linux.</li>
+<li><strong>/var/log/sa/</strong> Contains the daily sar files that are collected by the sysstat package.</li>
+<li><strong>/var/log/sssd/</strong> Use by system security services daemon that manage access to remote directories and authentication mechanisms.</li>
+</ul>
+
+<h2 class="post"><a href="2014/05/9-clean-out-a-white-board-photo" rel="permalink">Clean out a white board photo</a></h2>
+<div class="information">
+   <span class="date">2014-05-22</span> by <span class="author">EnelZA</span>, tagged as <span class="tags"><a href="tags/linux">linux</a></span>
+</div>
+<p>Use the following imagemagick convert script</p>
+
+<pre><code>#!/bin/bash
+convert $1 -morphology Convolve DoG:15,100,0
+-negate -normalize -blur 0x1
+-channel RBG -level 60%,91%,0.1 $2
+</code></pre>
+
+<p>Before photo</p>
+
+<p><img src="img/b9_1.jpg" alt="Before photo" title=""></p>
+
+<p>After Photo</p>
+
+<p><img src="img/b9_2.jpg" alt="After Photo" title=""></p>
+
+<h2 class="post"><a href="2014/03/7-create-a-pdf-calendar-for-printing" rel="permalink">Create a PDF calendar for printing</a></h2>
+<div class="information">
+   <span class="date">2014-03-03</span> by <span class="author">EnelZA</span>, tagged as <span class="tags"><a href="tags/linux">linux</a>, <a href="tags/pdf">pdf</a></span>
+</div>
+<p>Install via apt-get</p>
+
+<pre><code>apt-get install pcal
+</code></pre>
+
+<p>Use pcal to print a range of monthly calendars</p>
+
+<pre><code>pcal -o April.ps 4 2015 3
+</code></pre>
+
+<p>Will print from month 4, three months into the future.</p>
+
+<p>April, May and June</p>
+
+<h2 class="post"><a href="2014/02/6-how-to-fix-corrupted-pdf-documents" rel="permalink">How to fix corrupted pdf documents</a></h2>
+<div class="information">
+   <span class="date">2014-02-25</span> by <span class="author">EnelZA</span>, tagged as <span class="tags"><a href="tags/linux">linux</a></span>
+</div>
+<p>Try to convert the pdf document back to postscript</p>
+
+<pre><code>pdf2ps corupt.pdf recovered.ps &amp;&amp; psp2df recovered.ps recovered.pdf
+</code></pre>
+
+<p>If that does not work, try the pdf2cairo application</p>
+
+<p>pdftocairo -pdf corupted.pdf new.pdf</p>
+
+<h2 class="post"><a href="2014/02/5-colorize-log-files-using-ccze-tool" rel="permalink">Colorize log files using ccze tool</a></h2>
+<div class="information">
+   <span class="date">2014-02-15</span> by <span class="author">EnelZA</span>, tagged as <span class="tags"><a href="tags/linux">linux</a></span>
+</div>
+<p>Install via apt-get</p>
+
+<pre><code>    sudo apt-get install ccze -y
+</code></pre>
+
+<p>Display log files</p>
+
+<pre><code>    tail /var/log/syslog | ccze -A
+</code></pre>
+
+<p>Export log files to color html</p>
+
+<pre><code>   cat /var/log/syslog | ccze -h &gt; ~/Desktop/syslog.html
+</code></pre>
 
 <h2 class="post"><a href="2014/01/4-test-cron-job-scripts" rel="permalink">Test Cron Job scripts</a></h2>
 <div class="information">
@@ -205,12 +314,18 @@ Press Control and x to exit.</p>
 <li><a href="tags/blog">blog (1)</a></li>
 <li><a href="tags/cron">cron (1)</a></li>
 <li><a href="tags/howto">howto (1)</a></li>
-<li><a href="tags/linux">linux (3)</a></li>
+<li><a href="tags/linux">linux (8)</a></li>
+<li><a href="tags/logs">logs (1)</a></li>
+<li><a href="tags/pdf">pdf (1)</a></li>
 <li><a href="tags/tutorial">tutorial (2)</a></li>
     </ul>
 
     <h2>Archive</h2>
     <ul>
+<li><a href="2015/04">April 2015 (1)</a></li>
+<li><a href="2014/05">May 2014 (1)</a></li>
+<li><a href="2014/03">March 2014 (1)</a></li>
+<li><a href="2014/02">February 2014 (2)</a></li>
 <li><a href="2014/01">January 2014 (1)</a></li>
 <li><a href="2013/10">October 2013 (2)</a></li>
 <li><a href="2013/09">September 2013 (1)</a></li>

@@ -7,10 +7,10 @@
   <meta name="Copyright" content="&copy; 2015 EnelZA">
   <meta name="Date" content="Mon Apr 27 12:00:31 2015">
   <meta name="Description" content="EnelZa is a blog about programming, bash, cool tools, efficiency on the command line.">
-  <meta name="Keywords" content="Posts tagged as cron, Bash Linux programming ">
+  <meta name="Keywords" content="Posts tagged as pdf, Bash Linux programming ">
   <link rel="stylesheet" href="../../default.css" type="text/css">
   <link rel="alternate" href="../../index.rss" title="RSS Feed" type="application/rss+xml">
-  <title>Posts tagged as cron</title>
+  <title>Posts tagged as pdf</title>
 </head>
 
 <body>
@@ -31,24 +31,25 @@
   </div>
 
   <div id="content">
-<div class="section">Posts tagged as cron</div>
+<div class="section">Posts tagged as pdf</div>
 
-<h2 class="post"><a href="../../2014/01/4-test-cron-job-scripts" rel="permalink">Test Cron Job scripts</a></h2>
+<h2 class="post"><a href="../../2014/03/7-create-a-pdf-calendar-for-printing" rel="permalink">Create a PDF calendar for printing</a></h2>
 <div class="information">
-   <span class="date">2014-01-27</span> by <span class="author">EnelZA</span>, tagged as <span class="tags"><a href="../../tags/cron">cron</a>, <a href="../../tags/linux">linux</a></span>
+   <span class="date">2014-03-03</span> by <span class="author">EnelZA</span>, tagged as <span class="tags"><a href="../../tags/linux">linux</a>, <a href="../../tags/pdf">pdf</a></span>
 </div>
-<p>Scheduled cron jobs can be hard to get right especially if the the cron job calls another script. 
-The scheduled script should no output anything to standard out and the script is triggered by a new instance of  /bin/sh</p>
+<p>Install via apt-get</p>
 
-<p>In order to test your scheduled script in the same way as cron will run it, issue the following command.</p>
-
-<pre><code>  /bin/sh -c "(
-  export PATH=/usr/bin:/bin;
-  /home/user/cron/scriptname.sh
-   &lt;/dev/null)"
+<pre><code>apt-get install pcal
 </code></pre>
 
-<p>It simulates a cron execution of the scriptname.sh script.</p>
+<p>Use pcal to print a range of monthly calendars</p>
+
+<pre><code>pcal -o April.ps 4 2015 3
+</code></pre>
+
+<p>Will print from month 4, three months into the future.</p>
+
+<p>April, May and June</p>
 
   </div>
 
