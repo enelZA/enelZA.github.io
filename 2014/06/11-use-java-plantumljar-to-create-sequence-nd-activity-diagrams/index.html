@@ -7,10 +7,10 @@
   <meta name="Copyright" content="&copy; 2015 EnelZA">
   <meta name="Date" content="Mon Apr 27 12:28:33 2015">
   <meta name="Description" content="EnelZa is a blog about programming, bash, cool tools, efficiency on the command line.">
-  <meta name="Keywords" content="Linux, PDF, Bash Linux programming ">
+  <meta name="Keywords" content="Howto, Java, Bash Linux programming ">
   <link rel="stylesheet" href="../../../default.css" type="text/css">
   <link rel="alternate" href="../../../index.rss" title="RSS Feed" type="application/rss+xml">
-  <title>Create a PDF calendar for printing</title>
+  <title>Use Java PlantUMl.jar to create sequence nd activity diagrams</title>
 </head>
 
 <body>
@@ -32,23 +32,35 @@
 
   <div id="content">
 
-<h2 class="post">Create a PDF calendar for printing</h2>
+<h2 class="post">Use Java PlantUMl.jar to create sequence nd activity diagrams</h2>
 <div class="information">
-   <span class="date">2014-03-03</span> by <span class="author">EnelZA</span>, tagged as <span class="tags"><a href="../../../tags/linux">linux</a>, <a href="../../../tags/pdf">pdf</a></span>
+   <span class="date">2014-06-03</span> by <span class="author">EnelZA</span>, tagged as <span class="tags"><a href="../../../tags/howto">howto</a>, <a href="../../../tags/java">java</a></span>
 </div>
-<p>Install via apt-get</p>
+<p>Download PlantUML from <a href="http://plantuml.sourceforge.net/download.html" title="Download plantuml">sourceforge.net</a></p>
 
-<pre><code>apt-get install pcal
+<p>Add the following to a text file</p>
+
+<pre><code>@startuml
+|Swimlane1|
+start
+:foo1;
+|#AntiqueWhite|Swimlane2|
+:foo2;
+:foo3;
+|Swimlane1|
+:foo4;
+|Swimlane2|
+:foo5;
+stop
+@enduml
 </code></pre>
 
-<p>Use pcal to print a range of monthly calendars</p>
+<p>Use the plantuml.jar file to generate the swimlane activity diagram.</p>
 
-<pre><code>pcal -o April.ps 4 2015 3
+<pre><code>java -jar plantuml.jar file.txt
 </code></pre>
 
-<p>Will print from month 4, three months into the future.</p>
-
-<p>April, May and June</p>
+<p><img src="img/b11.jpg" alt="Swimlane" title=""></p>
 
   </div>
 

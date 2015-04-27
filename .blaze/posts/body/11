@@ -1,0 +1,25 @@
+<p>Download PlantUML from <a href="http://plantuml.sourceforge.net/download.html" title="Download plantuml">sourceforge.net</a></p>
+
+<p>Add the following to a text file</p>
+
+<pre><code>@startuml
+|Swimlane1|
+start
+:foo1;
+|#AntiqueWhite|Swimlane2|
+:foo2;
+:foo3;
+|Swimlane1|
+:foo4;
+|Swimlane2|
+:foo5;
+stop
+@enduml
+</code></pre>
+
+<p>Use the plantuml.jar file to generate the swimlane activity diagram.</p>
+
+<pre><code>java -jar plantuml.jar file.txt
+</code></pre>
+
+<p><img src="img/b11.jpg" alt="Swimlane" title=""></p>

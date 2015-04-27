@@ -6,6 +6,38 @@
   <description>Programming, Linux and life.</description>
   <generator>BlazeBlogger 1.2.0</generator>
   <item>
+    <title>Use Java PlantUMl.jar to create sequence nd activity diagrams</title>
+    <link>http://enelza.github.io/2014/06/11-use-java-plantumljar-to-create-sequence-nd-activity-diagrams/</link>
+    <guid>http://enelza.github.io/2014/06/11-use-java-plantumljar-to-create-sequence-nd-activity-diagrams/</guid>
+    <pubDate>Tue, 03 Jun 2014 00:00:01 GMT</pubDate>
+    <description><![CDATA[<p>Download PlantUML from <a href="http://plantuml.sourceforge.net/download.html" title="Download plantuml">sourceforge.net</a></p>
+
+<p>Add the following to a text file</p>
+
+<pre><code>@startuml
+|Swimlane1|
+start
+:foo1;
+|#AntiqueWhite|Swimlane2|
+:foo2;
+:foo3;
+|Swimlane1|
+:foo4;
+|Swimlane2|
+:foo5;
+stop
+@enduml
+</code></pre>
+
+<p>Use the plantuml.jar file to generate the swimlane activity diagram.</p>
+
+<pre><code>java -jar plantuml.jar file.txt
+</code></pre>
+
+<p><img src="img/b11.jpg" alt="Swimlane" title=""></p>
+    ]]></description>
+  </item>
+  <item>
     <title>Clean out a white board photo</title>
     <link>http://enelza.github.io/2014/05/9-clean-out-a-white-board-photo/</link>
     <guid>http://enelza.github.io/2014/05/9-clean-out-a-white-board-photo/</guid>
@@ -263,74 +295,6 @@ fi
 Image</a> was obtained via <a href="http://commons.wikimedia.org/wiki/">Wikimedia Commons</a>
 and is the original work of © <a href="http://commons.wikimedia.org/wiki/User:XRay" title="User:XRay">Dietmar Rabich</a>, 
 <a rel="nofollow" class="external text" href="http://www.rabich.de/">rabich.de</a>,  licensed under <a title="Creative Commons Attribution-Share Alike 4.0" href="http://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>.</p>
-    ]]></description>
-  </item>
-  <item>
-    <title>Blogging from the command line</title>
-    <link>http://enelza.github.io/2013/09/1-blogging-from-the-command-line/</link>
-    <guid>http://enelza.github.io/2013/09/1-blogging-from-the-command-line/</guid>
-    <pubDate>Fri, 27 Sep 2013 00:00:01 GMT</pubDate>
-    <description><![CDATA[<p>This tutorial will demonstrate how to setup a static blog using <a href="http://blaze.blackened.cz">BlazeBlogger</a> as the blog template engine.</p>
-
-<h3>Prerequisites and assumptions</h3>
-
-<ol>
-<li>This tutorial make use of the apt-get package manager on Debian based Linux distros, please substitute with your favourite package installer.</li>
-<li>In order to keep things simple, I've used nano as the default text editor in this tutorial </li>
-</ol>
-
-<h3>Install BlazeBlogger</h3>
-
-<p>From your Linux command line, execute the following command</p>
-
-<pre><code>sudo apt-get install blazeblogger
-</code></pre>
-
-<h3>Create and configure your blog</h3>
-
-<p>Create a new folder that will contain your blog html files. For this example I will create a folder called <em>mynewblog</em> in my Home folder.</p>
-
-<pre><code>mkdir ~/mynewblog
-</code></pre>
-
-<p>Make sure you are in the newly created folder.</p>
-
-<pre><code>cd ~/mynewblog
-</code></pre>
-
-<p>The next step is to initialize a new blog container by typing the following command in your blog folder.</p>
-
-<pre><code>blaze-init
-</code></pre>
-
-<p>This will create a hidden folder called <strong>.blaze</strong>. This folder contains the configuration settings for your blog.
-Edit and change the configuration file. </p>
-
-<pre><code>nano ~/mynewblog/.blaze/config
-</code></pre>
-
-<p>Change the title, subtitle description and keywords settings to match your blog.</p>
-
-<p><img src="img/b1.jpg" alt="Config screen shot 1" title=""></p>
-
-<p>Now change the name and email address</p>
-
-<p><img src="img/b1_1.jpg" alt="Config screen shot 1" title=""></p>
-
-<p>Press the Control and o key and then Enter to save the config file. 
-Press Control and x to exit.</p>
-
-<h3>Create your first blog entry</h3>
-
-<p>BlazeBlogger ships with a command called blaze-add, enter the command and create your first blog entry, press Control and x to save and exit the nano text editor.</p>
-
-<p><img src="img/b1_2.jpg" alt="Config screen shot 2" title=""></p>
-
-<p>The blaze-make command will create your website and add the blog entry. It will create your landing page called "index.html". </p>
-
-<p>Here is the output of index.html.</p>
-
-<p><img src="img/b1_3.jpg" alt="Config screen shot 2" title=""></p>
     ]]></description>
   </item>
 </channel>

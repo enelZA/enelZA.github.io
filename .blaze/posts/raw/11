@@ -1,0 +1,27 @@
+
+Download PlantUML from [sourceforge.net](http://plantuml.sourceforge.net/download.html "Download plantuml")
+
+Add the following to a text file
+
+    @startuml
+    |Swimlane1|
+    start
+    :foo1;
+    |#AntiqueWhite|Swimlane2|
+    :foo2;
+    :foo3;
+    |Swimlane1|
+    :foo4;
+    |Swimlane2|
+    :foo5;
+    stop
+    @enduml
+
+
+Use the plantuml.jar file to generate the swimlane activity diagram.
+
+    java -jar plantuml.jar file.txt
+
+![Swimlane](img/b11.jpg)
+
+

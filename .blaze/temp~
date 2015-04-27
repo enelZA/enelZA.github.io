@@ -6,42 +6,15 @@
 # and underscores only.  Specifying your own url  is especially recommended
 # in case you use non-ASCII characters in your blog post title.
 #
-#   title:    Install asciiquarium on ubuntu
+#   title:    Use Java PlantUMl.jar to create sequence nd activity diagrams    
 #   author:   EnelZA
-#   date:     2015-04-27
-#   keywords: Linux, Fun
-#   tags:     Linux, Fun
+#   date:     2014-06-03
+#   keywords: Howto, Java
+#   tags:     Howto, Java
 #   url:      
 #
 # The header ends here. The rest is the content of your blog post.
 
+Download PlantUML from http://plantuml.sourceforge.net/download.html
 
-AsciiQuarium is a ncurses text based fish aquarium. 
 
-![Before photo](img/b10_1.jpg)
-
-###Setup libcurses and term-amimation in perl
-
-apt-get install libcurses-perl
-
-wget http://search.cpan.org/CPAN/authors/id/K/KB/KBAUCOM/Term-Animation-2.4.tar.gz
-
-tar -zxvf Term-Animation-2.4.tar.gz
-
-cd Term-Animation-2.4/
-
-perl Makefile.PL &&  make &&   make test
-
-make install
-
-###Now install asciiquarium
-
-wget http://www.robobunny.com/projects/asciiquarium/asciiquarium.tar.gz
-
-tar -zxvf asciiquarium.tar.gz
-
-cd asciiquarium_1.1/
-
-cp asciiquarium /usr/local/bin
-
-chmod 0755 /usr/local/bin/asciiquarium
