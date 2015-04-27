@@ -1,0 +1,10 @@
+
+Try to convert the pdf document back to postscript
+
+    pdf2ps corupt.pdf recovered.ps && psp2df recovered.ps recovered.pdf
+
+If that does not work, try the pdf2cairo application
+
+
+   pdftocairo -pdf corupted.pdf new.pdf
+

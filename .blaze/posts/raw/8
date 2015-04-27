@@ -1,0 +1,34 @@
+
+* __var/log/messages__ Contains global system messages, including the messages that are logged during system startup. There are several things that are logged in /var/log/messages including mail, cron, daemon, kern, auth, etc.
+* __/var/log/dmesg__ Contains kernel ring buffer information. When the system boots up, it prints number of messages on the screen that displays information about the hardware devices that the kernel detects during boot process. These messages are available in kernel ring buffer and whenever the new message comes the old message gets overwritten. You can also view the content of this file using the dmesg command.
+* __/var/log/auth.log__  Contains system authorization information, including user logins and authentication machinsm that were used.
+* __/var/log/boot.log__  Contains information that are logged when the system boots
+* __/var/log/daemon.log__ ontains information logged by the various background daemons that runs on the system
+* __/var/log/dpkg.log__ ontains information that are logged when a package is installed or removed using dpkg command
+* __/var/log/kern.log__Contains information logged by the kernel. Helpful for you to troubleshoot a custom-built kernel.
+* __/var/log/lastlog__ Displays the recent login information for all the users. This is not an ascii file. You should use lastlog command to view the content of this file.
+* __/var/log/maillog/var/log/mail.log__  Contains the log information from the mail server that is running on the system. For example, sendmail logs information about all the sent items to this file
+* __/var/log/user.log__  Contains information about all user level logs
+* __/var/log/Xorg.x.log__  Log messages from the X
+* __/var/log/alternatives.log__  Information by the update-alternatives are logged into this log file. On Ubuntu, update-alternatives maintains symbolic links determining def ault commands.
+* __/var/log/btmp__ (lastb command; shows all bad login attempts) /var/log/wtmp (displays all users logged in and out since the file is created...last command;login attempts)– This file contains information about failed login attemps. Use the last command to view the btmp file. For example, “last -f /var/log/btmp | more”
+* __/var/log/cups__ All printer and printing related log messages
+* __/var/log/anaconda.log__  When you install Linux, all installation related messages are stored in this log file
+* __/var/log/yum.log__  Contains information that are logged when a package is installed using yum
+* __/var/log/cron__ Whenever cron daemon(or anacron) starts a cron job, it logs the information about the cron job in this file
+* __/var/log/secure__ Contains information related to authentication and authorization privileges. For example, sshd logs all the messages here, including unsuccessful login.
+* __/var/log/wtmp or /var/log/utmp__ Contains login records. Using wtmp you can find out who is logged into the system. who command uses this file to display the information.
+* __/var/log/faillog__ Contains user failed login attemps. Use faillog command to display the content of this file.
+Apart from the above log files, /var/log directory may also contain the following sub-directories depending on the application that is running on your system.
+* __/var/log/httpd/ (or) /var/log/apache2__ Contains the apache web server access_log and error_log
+* __/var/log/lighttpd/__ Contains light HTTPD access_log and error_log
+* __/var/log/conman/__ Log files for ConMan client. conman connects remote consoles that are managed by conmand daemon.
+* __/var/log/mail/__ This subdirectory contains additional logs from your mail server. For example, sendmail stores the collected mail statistics in /var/log/mail/statistics file
+* __/var/log/prelink/__ prelink program modifies shared libraries and linked binaries to speed up the startup process.
+* __/var/log/prelink/prelink.log__ contains the information about the .so file that was modified by the prelink.
+* __/var/log/audit/__ Contains logs information stored by the Linux audit daemon (auditd).
+* __/var/log/setroubleshoot/__ SELinux uses setroubleshootd (SE Trouble Shoot Daemon) to notify about issues in the security context of files, and logs those information in this log file.
+* __/var/log/samba/__ Contains log information stored by samba, which is used to connect Windows to Linux.
+* __/var/log/sa/__ Contains the daily sar files that are collected by the sysstat package.
+* __/var/log/sssd/__ Use by system security services daemon that manage access to remote directories and authentication mechanisms.
+

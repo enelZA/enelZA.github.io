@@ -1,0 +1,13 @@
+<p>Install via apt-get</p>
+
+<pre><code>apt-get install pcal
+</code></pre>
+
+<p>Use pcal to print a range of monthly calendars</p>
+
+<pre><code>pcal -o April.ps 4 2015 3
+</code></pre>
+
+<p>Will print from month 4, three months into the future.</p>
+
+<p>April, May and June</p>

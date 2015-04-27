@@ -1,0 +1,13 @@
+
+Install via apt-get
+
+        sudo apt-get install ccze -y
+
+Display log files
+
+        tail /var/log/syslog | ccze -A
+
+Export log files to color html
+
+       cat /var/log/syslog | ccze -h > ~/Desktop/syslog.html
+
