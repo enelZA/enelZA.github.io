@@ -5,7 +5,7 @@
   <meta http-equiv="Content-Type" content="txt/html; charset=UTF-8">
   <meta name="Generator" content="BlazeBlogger 1.2.0">
   <meta name="Copyright" content="&copy; 2015 EnelZA">
-  <meta name="Date" content="Mon Apr 27 13:13:54 2015">
+  <meta name="Date" content="Mon Apr 27 13:27:31 2015">
   <meta name="Description" content="EnelZa is a blog about programming, bash, cool tools, efficiency on the command line.">
   <meta name="Keywords" content="Posts tagged as howto, Bash Linux programming ">
   <link rel="stylesheet" href="../../default.css" type="text/css">
@@ -32,6 +32,29 @@
 
   <div id="content">
 <div class="section">Posts tagged as howto</div>
+
+<h2 class="post"><a href="../../2015/02/15-draw-the-mandelbrot-set-on-the-command-line" rel="permalink">Draw the Mandelbrot set on the command line.</a></h2>
+<div class="information">
+   <span class="date">2015-02-21</span> by <span class="author">EnelZA</span>, tagged as <span class="tags"><a href="../../tags/howto">howto</a>, <a href="../../tags/linux">linux</a></span>
+</div>
+<p>Create a Bash script to draw the famous Mandelbrot set.</p>
+
+<p>mandel() {
+  for((P=10<em>*8,Q=P/100,X=320</em>Q/(<code>tput
+   cols</code>-1),Y=210<em>Q/<code>tput lines</code>,
+   y=-105</em>Q,v=-2\
+   20<em>Q,x=v;y&lt;105</em>Q;x=v,y+=Y));do for
+   ((;x<P;a=b=i=k=c
+   =0,x+=X));do for((;a<em>a+b</em>b&lt;
+   2<em>\
+   P</em>P&amp;&amp;i++&lt;99;a=((c=a)<em>a-b</em>b)/P+x,b=
+   2<em>c</em>b/P+y));do :;done;(((j=(i
+   &lt;99?i%16:0)+30)>\
+   37?k=1,j-=8:0));echo -ne "\E[$k;$j"mE
+   ;done;echo -e "\E[0m";done
+  }</p>
+
+<p>│<img src="http://enelza.github.io/img/b14.jpg" alt="Ascii Mandelbrot set" title=""></p>
 
 <h2 class="post"><a href="../../2014/08/12-extract-web-links-from-a-website-using-grep-and-sed" rel="permalink">Extract web links from a website using grep and sed</a></h2>
 <div class="information">
@@ -144,8 +167,7 @@ fi
 <li><a href="../../tags/book">book (1)</a></li>
 <li><a href="../../tags/cron">cron (1)</a></li>
 <li><a href="../../tags/fun">fun (1)</a></li>
-<li><a href="../../tags/hoto">hoto (1)</a></li>
-<li><a href="../../tags/howto">howto (3)</a></li>
+<li><a href="../../tags/howto">howto (4)</a></li>
 <li><a href="../../tags/java">java (1)</a></li>
 <li><a href="../../tags/linux">linux (11)</a></li>
 <li><a href="../../tags/logs">logs (1)</a></li>
@@ -156,7 +178,7 @@ fi
 
     <h2>Archive</h2>
     <ul>
-<li><a href="../../2015/01">January 2015 (1)</a></li>
+<li><a href="../../2015/02">February 2015 (1)</a></li>
 <li><a href="../../2014/11">November 2014 (1)</a></li>
 <li><a href="../../2014/08">August 2014 (1)</a></li>
 <li><a href="../../2014/07">July 2014 (1)</a></li>

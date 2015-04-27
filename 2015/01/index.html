@@ -5,7 +5,7 @@
   <meta http-equiv="Content-Type" content="txt/html; charset=UTF-8">
   <meta name="Generator" content="BlazeBlogger 1.2.0">
   <meta name="Copyright" content="&copy; 2015 EnelZA">
-  <meta name="Date" content="Mon Apr 27 13:13:54 2015">
+  <meta name="Date" content="Mon Apr 27 13:18:35 2015">
   <meta name="Description" content="EnelZa is a blog about programming, bash, cool tools, efficiency on the command line.">
   <meta name="Keywords" content="Archive for January 2015, Bash Linux programming ">
   <link rel="stylesheet" href="../../default.css" type="text/css">
@@ -70,37 +70,37 @@
 <p><xsl:output indent="yes" method="xml" encoding="UTF-8" omit-xml-declaration="yes" />
    <xsl:template match="/">
    <html>
-        <table border="1">
+    <table border="1">
         <tr>
-        <td>Temp</td>
-        <td><xsl:value-of select="//yweather:condition/@temp" /> </td>
-        </tr>
-        <tr>
-        <td>Condition</td>
-        <td><xsl:value-of select="//item/yweather:condition/@text" /></td>
-        </tr>
-        <tr>
-        <td>Wind Speed</td>
-        <td><xsl:value-of select="//yweather:wind/@speed" /></td>
-        </tr>
-        <tr>
-        <td>Sunrise</td>
-        <td><xsl:value-of select="//yweather:astronomy/@sunrise" /></td>
-        </tr>
-        <tr>
-        <td>Sunset</td>
-        <td><xsl:value-of select="//yweather:astronomy/@sunset" /></td>
-        </tr>
-        <tr><td>Tomorrow High</td>
-         <td><xsl:value-of select="//item/yweather:forecast[1]/@high" /></td>
-        </tr>
-        <tr><td>Tomorrow Low</td>
-        <td><xsl:value-of select="//item/yweather:forecast[1]/@low" /></td>
-        </tr>
-        </table>
-   </html>
-   </xsl:template>
-   </xsl:stylesheet></p>
+    <td>Temp</td>
+    <td><xsl:value-of select="//yweather:condition/@temp" /> </td>
+    </tr>
+    <tr>
+    <td>Condition</td>
+    <td><xsl:value-of select="//item/yweather:condition/@text" /></td>
+    </tr>
+    <tr>
+    <td>Wind Speed</td>
+    <td><xsl:value-of select="//yweather:wind/@speed" /></td>
+    </tr>
+    <tr>
+    <td>Sunrise</td>
+    <td><xsl:value-of select="//yweather:astronomy/@sunrise" /></td>
+    </tr>
+    <tr>
+    <td>Sunset</td>
+    <td><xsl:value-of select="//yweather:astronomy/@sunset" /></td>
+    </tr>
+    <tr><td>Tomorrow High</td>
+    <td><xsl:value-of select="//item/yweather:forecast[1]/@high" /></td>
+    </tr>
+    <tr><td>Tomorrow Low</td>
+    <td><xsl:value-of select="//item/yweather:forecast[1]/@low" /></td>
+    </tr>
+    </table>
+    </html>
+    </xsl:template>
+    </xsl:stylesheet></p>
 
 <h2>Output</h2>
 
