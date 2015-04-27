@@ -5,7 +5,7 @@
   <meta http-equiv="Content-Type" content="txt/html; charset=UTF-8">
   <meta name="Generator" content="BlazeBlogger 1.2.0">
   <meta name="Copyright" content="&copy; 2015 EnelZA">
-  <meta name="Date" content="Mon Apr 27 13:27:31 2015">
+  <meta name="Date" content="Mon Apr 27 13:29:59 2015">
   <meta name="Description" content="EnelZa is a blog about programming, bash, cool tools, efficiency on the command line.">
   <meta name="Keywords" content="Bash Linux programming ">
   <link rel="stylesheet" href="default.css" type="text/css">
@@ -38,20 +38,21 @@
 </div>
 <p>Create a Bash script to draw the famous Mandelbrot set.</p>
 
-<p>mandel() {
-  for((P=10<em>*8,Q=P/100,X=320</em>Q/(<code>tput
-   cols</code>-1),Y=210<em>Q/<code>tput lines</code>,
-   y=-105</em>Q,v=-2\
-   20<em>Q,x=v;y&lt;105</em>Q;x=v,y+=Y));do for
-   ((;x<P;a=b=i=k=c
-   =0,x+=X));do for((;a<em>a+b</em>b&lt;
-   2<em>\
-   P</em>P&amp;&amp;i++&lt;99;a=((c=a)<em>a-b</em>b)/P+x,b=
-   2<em>c</em>b/P+y));do :;done;(((j=(i
-   &lt;99?i%16:0)+30)>\
+<pre><code>   mandel() {
+   for((P=10**8,Q=P/100,X=320*Q/(`tput
+   cols`-1),Y=210*Q/`tput lines`,
+   y=-105*Q,v=-2\
+   20*Q,x=v;y&lt;105*Q;x=v,y+=Y));do for
+   ((;x&lt;P;a=b=i=k=c
+   =0,x+=X));do for((;a*a+b*b&lt;
+   2*\
+   P*P&amp;&amp;i++&lt;99;a=((c=a)*a-b*b)/P+x,b=
+   2*c*b/P+y));do :;done;(((j=(i
+   &lt;99?i%16:0)+30)&gt;\
    37?k=1,j-=8:0));echo -ne "\E[$k;$j"mE
    ;done;echo -e "\E[0m";done
-  }</p>
+   }
+</code></pre>
 
 <p>│<img src="http://enelza.github.io/img/b14.jpg" alt="Ascii Mandelbrot set" title=""></p>
 
