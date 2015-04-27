@@ -5,7 +5,7 @@
   <meta http-equiv="Content-Type" content="txt/html; charset=UTF-8">
   <meta name="Generator" content="BlazeBlogger 1.2.0">
   <meta name="Copyright" content="&copy; 2015 EnelZA">
-  <meta name="Date" content="Mon Apr 27 12:10:44 2015">
+  <meta name="Date" content="Mon Apr 27 12:11:34 2015">
   <meta name="Description" content="EnelZa is a blog about programming, bash, cool tools, efficiency on the command line.">
   <meta name="Keywords" content="Bash Linux programming ">
   <link rel="stylesheet" href="default.css" type="text/css">
@@ -32,9 +32,29 @@
 
   <div id="content">
 
-<h2 class="post"><a href="2015/04/10-install-asciiquarium-on-ubuntu" rel="permalink">Install asciiquarium on ubuntu</a></h2>
+<h2 class="post"><a href="2014/05/9-clean-out-a-white-board-photo" rel="permalink">Clean out a white board photo</a></h2>
 <div class="information">
-   <span class="date">2015-04-27</span> by <span class="author">EnelZA</span>, tagged as <span class="tags"><a href="tags/fun">fun</a>, <a href="tags/linux">linux</a></span>
+   <span class="date">2014-05-22</span> by <span class="author">EnelZA</span>, tagged as <span class="tags"><a href="tags/linux">linux</a></span>
+</div>
+<p>Use the following imagemagick convert script</p>
+
+<pre><code>#!/bin/bash
+convert $1 -morphology Convolve DoG:15,100,0
+-negate -normalize -blur 0x1
+-channel RBG -level 60%,91%,0.1 $2
+</code></pre>
+
+<p>Before photo</p>
+
+<p><img src="img/b9_1.jpg" alt="Before photo" title=""></p>
+
+<p>After Photo</p>
+
+<p><img src="img/b9_2.jpg" alt="After Photo" title=""></p>
+
+<h2 class="post"><a href="2014/05/10-install-asciiquarium-on-ubuntu" rel="permalink">Install asciiquarium on ubuntu</a></h2>
+<div class="information">
+   <span class="date">2014-05-05</span> by <span class="author">EnelZA</span>, tagged as <span class="tags"><a href="tags/fun">fun</a>, <a href="tags/linux">linux</a></span>
 </div>
 <p>AsciiQuarium is a ncurses text based fish aquarium. </p>
 
@@ -65,26 +85,6 @@
 <p>cp asciiquarium /usr/local/bin</p>
 
 <p>chmod 0755 /usr/local/bin/asciiquarium</p>
-
-<h2 class="post"><a href="2014/05/9-clean-out-a-white-board-photo" rel="permalink">Clean out a white board photo</a></h2>
-<div class="information">
-   <span class="date">2014-05-22</span> by <span class="author">EnelZA</span>, tagged as <span class="tags"><a href="tags/linux">linux</a></span>
-</div>
-<p>Use the following imagemagick convert script</p>
-
-<pre><code>#!/bin/bash
-convert $1 -morphology Convolve DoG:15,100,0
--negate -normalize -blur 0x1
--channel RBG -level 60%,91%,0.1 $2
-</code></pre>
-
-<p>Before photo</p>
-
-<p><img src="img/b9_1.jpg" alt="Before photo" title=""></p>
-
-<p>After Photo</p>
-
-<p><img src="img/b9_2.jpg" alt="After Photo" title=""></p>
 
 <h2 class="post"><a href="2014/04/8-all-the-different-linux-log-files" rel="permalink">All the different linux log files</a></h2>
 <div class="information">
@@ -357,8 +357,7 @@ Press Control and x to exit.</p>
 
     <h2>Archive</h2>
     <ul>
-<li><a href="2015/04">April 2015 (1)</a></li>
-<li><a href="2014/05">May 2014 (1)</a></li>
+<li><a href="2014/05">May 2014 (2)</a></li>
 <li><a href="2014/04">April 2014 (1)</a></li>
 <li><a href="2014/03">March 2014 (1)</a></li>
 <li><a href="2014/02">February 2014 (2)</a></li>

@@ -6,10 +6,32 @@
   <description>Programming, Linux and life.</description>
   <generator>BlazeBlogger 1.2.0</generator>
   <item>
+    <title>Clean out a white board photo</title>
+    <link>http://enelza.github.io/2014/05/9-clean-out-a-white-board-photo/</link>
+    <guid>http://enelza.github.io/2014/05/9-clean-out-a-white-board-photo/</guid>
+    <pubDate>Thu, 22 May 2014 00:00:01 GMT</pubDate>
+    <description><![CDATA[<p>Use the following imagemagick convert script</p>
+
+<pre><code>#!/bin/bash
+convert $1 -morphology Convolve DoG:15,100,0
+-negate -normalize -blur 0x1
+-channel RBG -level 60%,91%,0.1 $2
+</code></pre>
+
+<p>Before photo</p>
+
+<p><img src="img/b9_1.jpg" alt="Before photo" title=""></p>
+
+<p>After Photo</p>
+
+<p><img src="img/b9_2.jpg" alt="After Photo" title=""></p>
+    ]]></description>
+  </item>
+  <item>
     <title>Install asciiquarium on ubuntu</title>
-    <link>http://enelza.github.io/2015/04/10-install-asciiquarium-on-ubuntu/</link>
-    <guid>http://enelza.github.io/2015/04/10-install-asciiquarium-on-ubuntu/</guid>
-    <pubDate>Mon, 27 Apr 2015 00:00:01 GMT</pubDate>
+    <link>http://enelza.github.io/2014/05/10-install-asciiquarium-on-ubuntu/</link>
+    <guid>http://enelza.github.io/2014/05/10-install-asciiquarium-on-ubuntu/</guid>
+    <pubDate>Mon, 05 May 2014 00:00:01 GMT</pubDate>
     <description><![CDATA[<p>AsciiQuarium is a ncurses text based fish aquarium. </p>
 
 <p><img src="img/b10_1.jpg" alt="Before photo" title=""></p>
@@ -39,28 +61,6 @@
 <p>cp asciiquarium /usr/local/bin</p>
 
 <p>chmod 0755 /usr/local/bin/asciiquarium</p>
-    ]]></description>
-  </item>
-  <item>
-    <title>Clean out a white board photo</title>
-    <link>http://enelza.github.io/2014/05/9-clean-out-a-white-board-photo/</link>
-    <guid>http://enelza.github.io/2014/05/9-clean-out-a-white-board-photo/</guid>
-    <pubDate>Thu, 22 May 2014 00:00:01 GMT</pubDate>
-    <description><![CDATA[<p>Use the following imagemagick convert script</p>
-
-<pre><code>#!/bin/bash
-convert $1 -morphology Convolve DoG:15,100,0
--negate -normalize -blur 0x1
--channel RBG -level 60%,91%,0.1 $2
-</code></pre>
-
-<p>Before photo</p>
-
-<p><img src="img/b9_1.jpg" alt="Before photo" title=""></p>
-
-<p>After Photo</p>
-
-<p><img src="img/b9_2.jpg" alt="After Photo" title=""></p>
     ]]></description>
   </item>
   <item>

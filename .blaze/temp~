@@ -6,24 +6,42 @@
 # and underscores only.  Specifying your own url  is especially recommended
 # in case you use non-ASCII characters in your blog post title.
 #
-#   title:    Clean out a white board photo
+#   title:    Install asciiquarium on ubuntu
 #   author:   EnelZA
-#   date:     2014-05-22
-#   keywords: Linux
-#   tags:     Linux
+#   date:     2015-04-27
+#   keywords: Linux, Fun
+#   tags:     Linux, Fun
 #   url:      
 #
 # The header ends here. The rest is the content of your blog post.
 
-Use the following imagemagick convert script
 
-    #!/bin/bash
-    convert $1 -morphology Convolve DoG:15,100,0
-    -negate -normalize -blur 0x1
-    -channel RBG -level 60%,91%,0.1 $2
+AsciiQuarium is a ncurses text based fish aquarium. 
 
+![Before photo](img/b10_1.jpg)
 
-![Before photo](img/b1_2.jpg)
+###Setup libcurses and term-amimation in perl
 
+apt-get install libcurses-perl
 
-![After Photo](img/b1_2.jpg)
+wget http://search.cpan.org/CPAN/authors/id/K/KB/KBAUCOM/Term-Animation-2.4.tar.gz
+
+tar -zxvf Term-Animation-2.4.tar.gz
+
+cd Term-Animation-2.4/
+
+perl Makefile.PL &&  make &&   make test
+
+make install
+
+###Now install asciiquarium
+
+wget http://www.robobunny.com/projects/asciiquarium/asciiquarium.tar.gz
+
+tar -zxvf asciiquarium.tar.gz
+
+cd asciiquarium_1.1/
+
+cp asciiquarium /usr/local/bin
+
+chmod 0755 /usr/local/bin/asciiquarium

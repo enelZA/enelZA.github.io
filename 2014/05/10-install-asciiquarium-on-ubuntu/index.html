@@ -7,10 +7,10 @@
   <meta name="Copyright" content="&copy; 2015 EnelZA">
   <meta name="Date" content="Mon Apr 27 12:11:34 2015">
   <meta name="Description" content="EnelZa is a blog about programming, bash, cool tools, efficiency on the command line.">
-  <meta name="Keywords" content="Linux, Bash Linux programming ">
+  <meta name="Keywords" content="Linux, Fun, Bash Linux programming ">
   <link rel="stylesheet" href="../../../default.css" type="text/css">
   <link rel="alternate" href="../../../index.rss" title="RSS Feed" type="application/rss+xml">
-  <title>Colorize log files using ccze tool</title>
+  <title>Install asciiquarium on ubuntu</title>
 </head>
 
 <body>
@@ -32,24 +32,39 @@
 
   <div id="content">
 
-<h2 class="post">Colorize log files using ccze tool</h2>
+<h2 class="post">Install asciiquarium on ubuntu</h2>
 <div class="information">
-   <span class="date">2014-02-15</span> by <span class="author">EnelZA</span>, tagged as <span class="tags"><a href="../../../tags/linux">linux</a></span>
+   <span class="date">2014-05-05</span> by <span class="author">EnelZA</span>, tagged as <span class="tags"><a href="../../../tags/fun">fun</a>, <a href="../../../tags/linux">linux</a></span>
 </div>
-<p>Install via apt-get</p>
+<p>AsciiQuarium is a ncurses text based fish aquarium. </p>
 
-<pre><code>    sudo apt-get install ccze -y
-</code></pre>
+<p><img src="img/b10_1.jpg" alt="Before photo" title=""></p>
 
-<p>Display log files</p>
+<h3>Setup libcurses and term-amimation in perl</h3>
 
-<pre><code>    tail /var/log/syslog | ccze -A
-</code></pre>
+<p>apt-get install libcurses-perl</p>
 
-<p>Export log files to color html</p>
+<p>wget http://search.cpan.org/CPAN/authors/id/K/KB/KBAUCOM/Term-Animation-2.4.tar.gz</p>
 
-<pre><code>   cat /var/log/syslog | ccze -h &gt; ~/Desktop/syslog.html
-</code></pre>
+<p>tar -zxvf Term-Animation-2.4.tar.gz</p>
+
+<p>cd Term-Animation-2.4/</p>
+
+<p>perl Makefile.PL &amp;&amp;  make &amp;&amp;   make test</p>
+
+<p>make install</p>
+
+<h3>Now install asciiquarium</h3>
+
+<p>wget http://www.robobunny.com/projects/asciiquarium/asciiquarium.tar.gz</p>
+
+<p>tar -zxvf asciiquarium.tar.gz</p>
+
+<p>cd asciiquarium_1.1/</p>
+
+<p>cp asciiquarium /usr/local/bin</p>
+
+<p>chmod 0755 /usr/local/bin/asciiquarium</p>
 
   </div>
 
