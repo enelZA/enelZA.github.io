@@ -1,0 +1,16 @@
+<p>Create a function called getlinks in your ~/.bashrc</p>
+
+<p>getlinks ()
+   {
+   wget -q $1 -O - | 
+   tr "\t\r\n'" '   "' | 
+   grep -i -o '<a[^>]+href[ ]<em>=[ \t]</em>"(ht\|f)tps\?:[^"]+"'| 
+   sed -e 's/^.<em>"([^"]+)".</em>$/\1/g'
+   }</p>
+
+<p>Run the script with the target website as the parameter.</p>
+
+<pre><code>getlinks http://www.planetsharepoint.org
+</code></pre>
+
+<p>The script will fetch all the linked urls on the page.</p>

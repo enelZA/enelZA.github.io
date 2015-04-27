@@ -6,15 +6,12 @@
 # and underscores only.  Specifying your own url  is especially recommended
 # in case you use non-ASCII characters in your blog post title.
 #
-#   title:    Use Java PlantUMl.jar to create sequence nd activity diagrams    
+#   title:    
 #   author:   EnelZA
-#   date:     2014-06-03
-#   keywords: Howto, Java
-#   tags:     Howto, Java
+#   date:     2015-04-27
+#   keywords: 
+#   tags:     
 #   url:      
 #
 # The header ends here. The rest is the content of your blog post.
-
-Download PlantUML from http://plantuml.sourceforge.net/download.html
-
 

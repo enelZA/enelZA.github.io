@@ -6,9 +6,58 @@
   <description>Programming, Linux and life.</description>
   <generator>BlazeBlogger 1.2.0</generator>
   <item>
-    <title>Use Java PlantUMl.jar to create sequence nd activity diagrams</title>
-    <link>http://enelza.github.io/2014/06/11-use-java-plantumljar-to-create-sequence-nd-activity-diagrams/</link>
-    <guid>http://enelza.github.io/2014/06/11-use-java-plantumljar-to-create-sequence-nd-activity-diagrams/</guid>
+    <title>Reading Atlas Shrugged for the tenth time.</title>
+    <link>http://enelza.github.io/2014/11/14-reading-atlas-shrugged-for-the-tenth-time/</link>
+    <guid>http://enelza.github.io/2014/11/14-reading-atlas-shrugged-for-the-tenth-time/</guid>
+    <pubDate>Fri, 14 Nov 2014 00:00:01 GMT</pubDate>
+    <description><![CDATA[<p>The most influential book of all time.</p>
+
+<p><img src="img/b13.jpg" alt="Atlas Shrugged" title=""></p>
+    ]]></description>
+  </item>
+  <item>
+    <title>Extract web links from a website using grep and sed</title>
+    <link>http://enelza.github.io/2014/08/12-extract-web-links-from-a-website-using-grep-and-sed/</link>
+    <guid>http://enelza.github.io/2014/08/12-extract-web-links-from-a-website-using-grep-and-sed/</guid>
+    <pubDate>Thu, 21 Aug 2014 00:00:01 GMT</pubDate>
+    <description><![CDATA[<p>Create a function called getlinks in your ~/.bashrc</p>
+
+<p>getlinks ()
+   {
+   wget -q $1 -O - | 
+   tr "\t\r\n'" '   "' | 
+   grep -i -o '<a[^>]+href[ ]<em>=[ \t]</em>"(ht\|f)tps\?:[^"]+"'| 
+   sed -e 's/^.<em>"([^"]+)".</em>$/\1/g'
+   }</p>
+
+<p>Run the script with the target website as the parameter.</p>
+
+<pre><code>getlinks http://www.planetsharepoint.org
+</code></pre>
+
+<p>The script will fetch all the linked urls on the page.</p>
+    ]]></description>
+  </item>
+  <item>
+    <title>Writing Instruments</title>
+    <link>http://enelza.github.io/2014/07/13-writing-instruments/</link>
+    <guid>http://enelza.github.io/2014/07/13-writing-instruments/</guid>
+    <pubDate>Mon, 21 Jul 2014 00:00:01 GMT</pubDate>
+    <description><![CDATA[<p>After 3 decades of writing stuff down, I finally decided othe these two writing instruments as my de facto standard.</p>
+
+<h1>Pelikan M150 Fountain Pen</h1>
+
+<p><img src="img/b12_1.jpg" alt="Pelikan" title=""></p>
+
+<h1>Rotring 600 Draftsman Pencil</h1>
+
+<p><img src="img/b12_2.jpg" alt="Pelikan" title=""></p>
+    ]]></description>
+  </item>
+  <item>
+    <title>Use Java PlantUMl.jar to create sequence and activity diagrams</title>
+    <link>http://enelza.github.io/2014/06/11-use-java-plantumljar-to-create-sequence-and-activity-diagrams/</link>
+    <guid>http://enelza.github.io/2014/06/11-use-java-plantumljar-to-create-sequence-and-activity-diagrams/</guid>
     <pubDate>Tue, 03 Jun 2014 00:00:01 GMT</pubDate>
     <description><![CDATA[<p>Download PlantUML from <a href="http://plantuml.sourceforge.net/download.html" title="Download plantuml">sourceforge.net</a></p>
 
@@ -190,111 +239,6 @@ Apart from the above log files, /var/log directory may also contain the followin
 
 <pre><code>   cat /var/log/syslog | ccze -h &gt; ~/Desktop/syslog.html
 </code></pre>
-    ]]></description>
-  </item>
-  <item>
-    <title>Test Cron Job scripts</title>
-    <link>http://enelza.github.io/2014/01/4-test-cron-job-scripts/</link>
-    <guid>http://enelza.github.io/2014/01/4-test-cron-job-scripts/</guid>
-    <pubDate>Mon, 27 Jan 2014 00:00:01 GMT</pubDate>
-    <description><![CDATA[<p>Scheduled cron jobs can be hard to get right especially if the the cron job calls another script. 
-The scheduled script should no output anything to standard out and the script is triggered by a new instance of  /bin/sh</p>
-
-<p>In order to test your scheduled script in the same way as cron will run it, issue the following command.</p>
-
-<pre><code>  /bin/sh -c "(
-  export PATH=/usr/bin:/bin;
-  /home/user/cron/scriptname.sh
-   &lt;/dev/null)"
-</code></pre>
-
-<p>It simulates a cron execution of the scriptname.sh script.</p>
-    ]]></description>
-  </item>
-  <item>
-    <title>Terminal "Google define:" functionality</title>
-    <link>http://enelza.github.io/2013/10/3-terminal-google-define-functionality/</link>
-    <guid>http://enelza.github.io/2013/10/3-terminal-google-define-functionality/</guid>
-    <pubDate>Sun, 27 Oct 2013 00:00:01 GMT</pubDate>
-    <description><![CDATA[<p>Google have the nifty option to help you with word definitions and spelling.</p>
-
-<p>Type define:exagency into the Google search bar.</p>
-
-<p><img src="img/b3_2.jpg" alt="Google define functionality" title=""></p>
-
-<p>It will give the the meaning of the word. </p>
-
-<p>If you misspelled, Google will suggest the correct spelling.</p>
-
-<p><img src="img/b3_1.jpg" alt="Google define functionality" title=""></p>
-
-<p>I use this functionality on a daily basis, because I always have a browser window open somewhere on my desktop. </p>
-
-<p>Sometimes you are offline, visiting the <a href="http://en.wikipedia.org/wiki/Kruger_National_Park">Kruger National Park</a> in South Africa, and your Google spell check habit will not suffice. The solution, <a href="http://aspell.net/">Gnu aspell</a> and <a href="http://aiksaurus.sourceforge.net/">aiksaurus</a> wrapped in a bash script.</p>
-
-<h2>The script:</h2>
-
-<pre><code>define() {
-## check dependencies
-hash aspell 2&gt;/dev/null || { printf &gt;&amp;2 "This script require Aspell but, it's not installed.
-\nUse 'Apt-get install aspell'\n"; return; }
-hash aiksaurus 2&gt;/dev/null || { printf &gt;&amp;2 "This script require aiksaurus, but it's not installed.
-\nUse 'Apt-get install aiksaurus'\n"; return; }
-
-check=$(echo "$1" | aspell -a | cut -d "*" -f2)
-if [[ $check == *,* ]]
-then
-check=$(echo "$1" | aspell -a | cut -d "&amp;" -f2)
-check2=$(echo $check | cut -d ":" -f2)
-arrIN=(${check2/,/ })
-for i in "${arrIN[@]}"; do
-    echo -e " \e[1;31m$i\e[0m"
-done
-else
-echo -e " \e[1;33m$1\e[0m"
-aiksaurus $1
-fi
-}
-</code></pre>
-
-<h2>Usage</h2>
-
-<p>Add the script to your ~/.bashrc file and use the define() function with the word you want to look up as the only parameter.</p>
-
-<p><img src="img/b3_3.jpg" alt="Function output" title=""></p>
-    ]]></description>
-  </item>
-  <item>
-    <title>Use ImageMagick to add a border to an image.</title>
-    <link>http://enelza.github.io/2013/10/2-use-imagemagick-to-add-a-border-to-an-image/</link>
-    <guid>http://enelza.github.io/2013/10/2-use-imagemagick-to-add-a-border-to-an-image/</guid>
-    <pubDate>Wed, 02 Oct 2013 00:00:01 GMT</pubDate>
-    <description><![CDATA[<p>Imagemagick is the Swiss army knive for command line image tools. </p>
-
-<p>Install the imagemagick suite via ap-get:</p>
-
-<pre><code>apt-get install imagemagick
-</code></pre>
-
-<p>Once installed, you can add a border to an image with the following command. (Command should be entered as a slingle line)</p>
-
-<pre><code>convert img.jpg -bordercolor white -border 13 
-\( +clone -background black -shadow 80x3+2+2 \) 
-+swap -background white -layers merge +repage img.jpg
-</code></pre>
-
-<p>I have used the following image as the source image.</p>
-
-<p><img src="img/b2.jpg" alt="Sample input image" title=""></p>
-
-<p>and the output will look like this</p>
-
-<p><img src="img/b2_1.jpg" alt="Sample output image" title=""></p>
-
-<p>The sample <a href="http://commons.wikimedia.org/wiki/File:D%C3%BClmen,_Naturschutzgebiet_-Am_Enteborn-_--_2014_--_0202.jpg#mediaviewer/File:D%C3%BClmen,_Naturschutzgebiet_-Am_Enteborn-_--_2014_--_0202.jpg">
-Image</a> was obtained via <a href="http://commons.wikimedia.org/wiki/">Wikimedia Commons</a>
-and is the original work of © <a href="http://commons.wikimedia.org/wiki/User:XRay" title="User:XRay">Dietmar Rabich</a>, 
-<a rel="nofollow" class="external text" href="http://www.rabich.de/">rabich.de</a>,  licensed under <a title="Creative Commons Attribution-Share Alike 4.0" href="http://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>.</p>
     ]]></description>
   </item>
 </channel>
