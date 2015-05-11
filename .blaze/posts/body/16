@@ -1,0 +1,16 @@
+<p>Install the excellent html-xml-utils utility via apt-get</p>
+
+<pre><code>sudo apt-get install html-xml-utils
+</code></pre>
+
+<p>Use curl in conjunction with hxnormalize and hxselect to parse the Google meta tags from the Google finance web page.</p>
+
+<p>In this example the code will connect to Google finance and query the stock price for Apple computers.</p>
+
+<pre><code>curl -s https://www.google.com/finance?q=NASDAQ:AAPL 
+| hxnormalize -l 240 -x 2&gt;/dev/null 
+| hxselect -s '\n' 'meta[itemprop="price"] ' 
+| awk -F'[="]' '{print $3}'
+</code></pre>
+
+<p>The above script should be run as a one liner. </p>

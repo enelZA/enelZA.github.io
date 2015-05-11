@@ -7,10 +7,10 @@
   <meta name="Copyright" content="&copy; 2015 EnelZA">
   <meta name="Date" content="Mon May 11 15:46:17 2015">
   <meta name="Description" content="EnelZa is a blog about programming, bash, cool tools, efficiency on the command line.">
-  <meta name="Keywords" content="Posts tagged as fun, Bash Linux programming ">
+  <meta name="Keywords" content="Archive for May 2015, Bash Linux programming ">
   <link rel="stylesheet" href="../../default.css" type="text/css">
   <link rel="alternate" href="../../index.rss" title="RSS Feed" type="application/rss+xml">
-  <title>Posts tagged as fun</title>
+  <title>Archive for May 2015</title>
 </head>
 
 <body>
@@ -31,41 +31,28 @@
   </div>
 
   <div id="content">
-<div class="section">Posts tagged as fun</div>
+<div class="section">Archive for May 2015</div>
 
-<h2 class="post"><a href="../../2014/05/10-install-asciiquarium-on-ubuntu" rel="permalink">Install asciiquarium on ubuntu</a></h2>
+<h2 class="post"><a href="../../2015/05/16-use-html-xml-utils-to-query-online-stock-prices" rel="permalink">Use html-xml-utils to query online stock prices</a></h2>
 <div class="information">
-   <span class="date">2014-05-05</span> by <span class="author">EnelZA</span>, tagged as <span class="tags"><a href="../../tags/fun">fun</a>, <a href="../../tags/linux">linux</a></span>
+   <span class="date">2015-05-11</span> by <span class="author">EnelZA</span>, tagged as <span class="tags"><a href="../../tags/hotow">hotow</a>, <a href="../../tags/linux">linux</a></span>
 </div>
-<p>AsciiQuarium is a ncurses text based fish aquarium. </p>
+<p>Install the excellent html-xml-utils utility via apt-get</p>
 
-<p><img src="http://enelza.github.io/img/b10_1.jpg" alt="Before photo" title=""></p>
+<pre><code>sudo apt-get install html-xml-utils
+</code></pre>
 
-<h3>Setup libcurses and term-amimation in perl</h3>
+<p>Use curl in conjunction with hxnormalize and hxselect to parse the Google meta tags from the Google finance web page.</p>
 
-<p>apt-get install libcurses-perl</p>
+<p>In this example the code will connect to Google finance and query the stock price for Apple computers.</p>
 
-<p>wget http://search.cpan.org/CPAN/authors/id/K/KB/KBAUCOM/Term-Animation-2.4.tar.gz</p>
+<pre><code>curl -s https://www.google.com/finance?q=NASDAQ:AAPL 
+| hxnormalize -l 240 -x 2&gt;/dev/null 
+| hxselect -s '\n' 'meta[itemprop="price"] ' 
+| awk -F'[="]' '{print $3}'
+</code></pre>
 
-<p>tar -zxvf Term-Animation-2.4.tar.gz</p>
-
-<p>cd Term-Animation-2.4/</p>
-
-<p>perl Makefile.PL &amp;&amp;  make &amp;&amp;   make test</p>
-
-<p>make install</p>
-
-<h3>Now install asciiquarium</h3>
-
-<p>wget http://www.robobunny.com/projects/asciiquarium/asciiquarium.tar.gz</p>
-
-<p>tar -zxvf asciiquarium.tar.gz</p>
-
-<p>cd asciiquarium_1.1/</p>
-
-<p>cp asciiquarium /usr/local/bin</p>
-
-<p>chmod 0755 /usr/local/bin/asciiquarium</p>
+<p>The above script should be run as a one liner. </p>
 
   </div>
 

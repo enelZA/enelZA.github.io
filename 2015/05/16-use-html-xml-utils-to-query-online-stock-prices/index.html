@@ -7,10 +7,10 @@
   <meta name="Copyright" content="&copy; 2015 EnelZA">
   <meta name="Date" content="Mon May 11 15:46:17 2015">
   <meta name="Description" content="EnelZa is a blog about programming, bash, cool tools, efficiency on the command line.">
-  <meta name="Keywords" content="Linux, Bash Linux programming ">
+  <meta name="Keywords" content="howto,linux, Bash Linux programming ">
   <link rel="stylesheet" href="../../../default.css" type="text/css">
   <link rel="alternate" href="../../../index.rss" title="RSS Feed" type="application/rss+xml">
-  <title>How to fix corrupted pdf documents</title>
+  <title>Use html-xml-utils to query online stock prices</title>
 </head>
 
 <body>
@@ -32,18 +32,26 @@
 
   <div id="content">
 
-<h2 class="post">How to fix corrupted pdf documents</h2>
+<h2 class="post">Use html-xml-utils to query online stock prices</h2>
 <div class="information">
-   <span class="date">2014-02-25</span> by <span class="author">EnelZA</span>, tagged as <span class="tags"><a href="../../../tags/linux">linux</a></span>
+   <span class="date">2015-05-11</span> by <span class="author">EnelZA</span>, tagged as <span class="tags"><a href="../../../tags/hotow">hotow</a>, <a href="../../../tags/linux">linux</a></span>
 </div>
-<p>Try to convert the pdf document back to postscript</p>
+<p>Install the excellent html-xml-utils utility via apt-get</p>
 
-<pre><code>pdf2ps corupt.pdf recovered.ps &amp;&amp; psp2df recovered.ps recovered.pdf
+<pre><code>sudo apt-get install html-xml-utils
 </code></pre>
 
-<p>If that does not work, try the pdf2cairo application</p>
+<p>Use curl in conjunction with hxnormalize and hxselect to parse the Google meta tags from the Google finance web page.</p>
 
-<p>pdftocairo -pdf corupted.pdf new.pdf</p>
+<p>In this example the code will connect to Google finance and query the stock price for Apple computers.</p>
+
+<pre><code>curl -s https://www.google.com/finance?q=NASDAQ:AAPL 
+| hxnormalize -l 240 -x 2&gt;/dev/null 
+| hxselect -s '\n' 'meta[itemprop="price"] ' 
+| awk -F'[="]' '{print $3}'
+</code></pre>
+
+<p>The above script should be run as a one liner. </p>
 
   </div>
 
