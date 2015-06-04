@@ -3,7 +3,10 @@
 <p>Create a function called mdman()</p>
 
 <pre><code>   mdman() {
-       grep -v "\-\-\-\-\-" "$*" | pandoc -s -f markdown -t man | groff -T utf8 -man | less
+       grep -v "\-\-\-\-\-" "$*" | 
+   pandoc -s -f markdown -t man | 
+   groff -T utf8 -man | 
+   less
    }
 </code></pre>
 

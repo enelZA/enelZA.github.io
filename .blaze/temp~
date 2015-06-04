@@ -6,12 +6,21 @@
 # and underscores only.  Specifying your own url  is especially recommended
 # in case you use non-ASCII characters in your blog post title.
 #
-#   title:    
+#   title:    Read Markdown files as Man pages 
 #   author:   EnelZA
 #   date:     2015-06-04
-#   keywords: 
-#   tags:     
+#   keywords: Linux, Howto
+#   tags:     Linux, Howto
 #   url:      
 #
 # The header ends here. The rest is the content of your blog post.
 
+Install pandoc via apt-get install pandoc
+
+Create a function called mdman()
+
+       mdman() {
+           grep -v "\-\-\-\-\-" "$*" | pandoc -s -f markdown -t man | groff -T utf8 -man | less
+	   }
+
+Use mdman Markdown.md
