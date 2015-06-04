@@ -20,7 +20,10 @@ Install pandoc via apt-get install pandoc
 Create a function called mdman()
 
        mdman() {
-           grep -v "\-\-\-\-\-" "$*" | pandoc -s -f markdown -t man | groff -T utf8 -man | less
+           grep -v "\-\-\-\-\-" "$*" | 
+	   pandoc -s -f markdown -t man | 
+	   groff -T utf8 -man | 
+	   less
 	   }
 
 Use mdman Markdown.md

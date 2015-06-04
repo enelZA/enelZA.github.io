@@ -15,14 +15,14 @@
 <p>Create a function called mdman()</p>
 
 <pre><code>   mdman() {
-       grep -v "\-\-\-\-\-" "$*" | 
+   grep -v "\-\-\-\-\-" "$*" | 
    pandoc -s -f markdown -t man | 
    groff -T utf8 -man | 
    less
    }
 </code></pre>
 
-<p>Use mdman Markdown.md</p>
+<p>Use like this:  mdman Markdownfile.md</p>
     ]]></description>
   </item>
   <item>
