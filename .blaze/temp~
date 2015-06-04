@@ -6,24 +6,21 @@
 # and underscores only.  Specifying your own url  is especially recommended
 # in case you use non-ASCII characters in your blog post title.
 #
-#   title:    Read Markdown files as Man pages 
+#   title:    Writing Instruments
 #   author:   EnelZA
-#   date:     2015-06-04
-#   keywords: Linux, Howto
-#   tags:     Linux, Howto
+#   date:     2014-07-21
+#   keywords: me
+#   tags:     me
 #   url:      
 #
 # The header ends here. The rest is the content of your blog post.
 
-Install pandoc via apt-get install pandoc
+After 3 decades of writing stuff down, I finally decided ot these two writing instruments as my de facto standard.
 
-Create a function called mdman()
+# Pelikan M150 Fountain Pen
 
-       mdman() {
-           grep -v "\-\-\-\-\-" "$*" | 
-	   pandoc -s -f markdown -t man | 
-	   groff -T utf8 -man | 
-	   less
-	   }
+![Pelikan](http://enelza.github.io/img/b12_1.jpg)
 
-Use mdman Markdown.md
+# Rotring 600 Draftsman Pencil
+
+![Pelikan](http://enelza.github.io/img/b12_2.jpg)
