@@ -7,10 +7,10 @@
   <meta name="Copyright" content="&copy; 2015 EnelZA">
   <meta name="Date" content="Thu Jun  4 07:47:26 2015">
   <meta name="Description" content="EnelZa is a blog about programming, bash, cool tools, efficiency on the command line.">
-  <meta name="Keywords" content="Posts tagged as me, Bash Linux programming ">
+  <meta name="Keywords" content="Archive for June 2015, Bash Linux programming ">
   <link rel="stylesheet" href="../../default.css" type="text/css">
   <link rel="alternate" href="../../index.rss" title="RSS Feed" type="application/rss+xml">
-  <title>Posts tagged as me</title>
+  <title>Archive for June 2015</title>
 </head>
 
 <body>
@@ -31,29 +31,22 @@
   </div>
 
   <div id="content">
-<div class="section">Posts tagged as me</div>
+<div class="section">Archive for June 2015</div>
 
-<h2 class="post"><a href="../../2014/11/14-reading-atlas-shrugged-for-the-tenth-time" rel="permalink">Reading Atlas Shrugged for the tenth time.</a></h2>
+<h2 class="post"><a href="../../2015/06/17-read-markdown-files-as-man-pages" rel="permalink">Read Markdown files as Man pages</a></h2>
 <div class="information">
-   <span class="date">2014-11-14</span> by <span class="author">EnelZA</span>, tagged as <span class="tags"><a href="../../tags/book">book</a>, <a href="../../tags/me">me</a></span>
+   <span class="date">2015-06-04</span> by <span class="author">EnelZA</span>, tagged as <span class="tags"><a href="../../tags/howto">howto</a>, <a href="../../tags/linux">linux</a></span>
 </div>
-<p>The most influential book of all time.</p>
+<p>Install pandoc via apt-get install pandoc</p>
 
-<p><img src="http://enelza.github.io/img/b13.jpg" alt="Atlas Shrugged" title=""></p>
+<p>Create a function called mdman()</p>
 
-<h2 class="post"><a href="../../2014/07/13-writing-instruments" rel="permalink">Writing Instruments</a></h2>
-<div class="information">
-   <span class="date">2014-07-21</span> by <span class="author">EnelZA</span>, tagged as <span class="tags"><a href="../../tags/me">me</a></span>
-</div>
-<p>After 3 decades of writing stuff down, I finally decided ot these two writing instruments as my de facto standard.</p>
+<pre><code>   mdman() {
+       grep -v "\-\-\-\-\-" "$*" | pandoc -s -f markdown -t man | groff -T utf8 -man | less
+   }
+</code></pre>
 
-<h1>Pelikan M150 Fountain Pen</h1>
-
-<p><img src="http://enelza.github.io/img/b12_1.jpg" alt="Pelikan" title=""></p>
-
-<h1>Rotring 600 Draftsman Pencil</h1>
-
-<p><img src="http://enelza.github.io/img/b12_2.jpg" alt="Pelikan" title=""></p>
+<p>Use mdman Markdown.md</p>
 
   </div>
 

@@ -6,6 +6,23 @@
   <description>Programming, Linux and life.</description>
   <generator>BlazeBlogger 1.2.0</generator>
   <item>
+    <title>Read Markdown files as Man pages</title>
+    <link>http://enelza.github.io/2015/06/17-read-markdown-files-as-man-pages/</link>
+    <guid>http://enelza.github.io/2015/06/17-read-markdown-files-as-man-pages/</guid>
+    <pubDate>Thu, 04 Jun 2015 00:00:01 GMT</pubDate>
+    <description><![CDATA[<p>Install pandoc via apt-get install pandoc</p>
+
+<p>Create a function called mdman()</p>
+
+<pre><code>   mdman() {
+       grep -v "\-\-\-\-\-" "$*" | pandoc -s -f markdown -t man | groff -T utf8 -man | less
+   }
+</code></pre>
+
+<p>Use mdman Markdown.md</p>
+    ]]></description>
+  </item>
+  <item>
     <title>Use html-xml-utils to query online stock prices</title>
     <link>http://enelza.github.io/2015/05/16-use-html-xml-utils-to-query-online-stock-prices/</link>
     <guid>http://enelza.github.io/2015/05/16-use-html-xml-utils-to-query-online-stock-prices/</guid>
@@ -232,26 +249,6 @@ Apart from the above log files, /var/log directory may also contain the followin
 <li><strong>/var/log/sa/</strong> Contains the daily sar files that are collected by the sysstat package.</li>
 <li><strong>/var/log/sssd/</strong> Use by system security services daemon that manage access to remote directories and authentication mechanisms.</li>
 </ul>
-    ]]></description>
-  </item>
-  <item>
-    <title>Create a PDF calendar for printing</title>
-    <link>http://enelza.github.io/2014/03/7-create-a-pdf-calendar-for-printing/</link>
-    <guid>http://enelza.github.io/2014/03/7-create-a-pdf-calendar-for-printing/</guid>
-    <pubDate>Mon, 03 Mar 2014 00:00:01 GMT</pubDate>
-    <description><![CDATA[<p>Install via apt-get</p>
-
-<pre><code>apt-get install pcal
-</code></pre>
-
-<p>Use pcal to print a range of monthly calendars</p>
-
-<pre><code>pcal -o April.ps 4 2015 3
-</code></pre>
-
-<p>Will print from month 4, three months into the future.</p>
-
-<p>April, May and June</p>
     ]]></description>
   </item>
 </channel>
